@@ -1,6 +1,6 @@
 <?php
 /* ---------------------------------------------------------------------------
- * Invoqly — UAE E-Invoicing Compliance landing page (single-file PHP)
+ * Invoqly — international bilingual invoicing landing page (single-file PHP)
  * Drop this file on any PHP 7.4+ host. No build step, no database.
  * Language: server-side render via ?lang=ar — client toggle swaps instantly.
  * --------------------------------------------------------------------------- */
@@ -17,12 +17,12 @@ $I18N = [
     ],
     'meta' => [
         'title' => [
-            'en' => 'Invoqly — UAE E-Invoicing Compliance, Live in 48 Hours',
-            'ar' => 'إنفوكلي — توافق الفوترة الإلكترونية في الإمارات خلال ٤٨ ساعة',
+            'en' => 'Invoqly — Bilingual Invoicing for Global Businesses',
+            'ar' => 'إنفوكلي — فواتير ثنائية اللغة للأعمال حول العالم',
         ],
         'desc' => [
-            'en' => 'Invoqly sits on top of your existing accounting system and makes every invoice PINT AE compliant — FTA transmission, clearance responses, Arabic & English support. No migration required.',
-            'ar' => 'تعمل إنفوكلي فوق نظام المحاسبة الحالي لديك وتجعل كل فاتورة متوافقة مع معيار PINT AE — إرسال إلى هيئة الضرائب، ومعالجة ردود القبول، ودعم بالعربية والإنجليزية. دون أي ترحيل.',
+            'en' => 'Create, send and track professional invoices in English and Arabic, with multi-currency support built for independent businesses worldwide.',
+            'ar' => 'أنشئ فواتير احترافية وأرسلها وتابعها بالعربية والإنجليزية، مع دعم العملات المتعددة للأعمال المستقلة حول العالم.',
         ],
     ],
     'nav' => [
@@ -30,46 +30,46 @@ $I18N = [
         'pricing' => ['en' => 'Pricing',      'ar' => 'الأسعار'],
         'faq'     => ['en' => 'FAQ',          'ar' => 'الأسئلة الشائعة'],
         'login'   => ['en' => 'Sign in',      'ar' => 'تسجيل الدخول'],
-        'cta'     => ['en' => 'Start free trial', 'ar' => 'ابدأ التجربة المجانية'],
+        'cta'     => ['en' => 'Join the free beta', 'ar' => 'انضم إلى النسخة التجريبية'],
     ],
     'hero' => [
-        'badge' => ['en' => 'Built for UAE SMEs', 'ar' => 'صُمم لشركات الإمارات الصغيرة والمتوسطة'],
-        'title1' => ['en' => 'Make Your Invoices', 'ar' => 'اجعل فواتيرك جاهزة'],
-        'title2' => ['en' => 'E-Invoicing Ready in 48 Hours.', 'ar' => 'للفوترة الإلكترونية خلال ٤٨ ساعة.'],
+        'badge' => ['en' => 'Built for independent businesses worldwide', 'ar' => 'صُمم للأعمال المستقلة حول العالم'],
+        'title1' => ['en' => 'Create Invoices', 'ar' => 'أنشئ فواتيرك'],
+        'title2' => ['en' => 'Clients Actually Understand.', 'ar' => 'بلغة يفهمها عملاؤك.'],
         'sub' => [
-            'en' => 'Invoqly sits on top of your existing accounting system — Excel, QuickBooks, or anything else. We handle PINT AE XML, FTA transmission, and clearance responses. You stay compliant. You don\'t change a thing.',
-            'ar' => 'تعمل إنفوكلي فوق نظام المحاسبة الحالي لديك — إكسل أو QuickBooks أو أي نظام آخر. نتولى عنك معيار PINT AE XML، والإرسال إلى هيئة الضرائب، وردود القبول. أنت متوافق، دون أن تغيّر أي شيء.',
+            'en' => 'Create polished invoices in English and Arabic, bill in the currency your client uses, and keep every sent, viewed and paid invoice in one clear place.',
+            'ar' => 'أنشئ فواتير احترافية بالعربية والإنجليزية، وفوتر بالعملة التي يستخدمها عميلك، وتابع كل فاتورة مرسلة أو معروضة أو مدفوعة في مكان واحد.',
         ],
-        'cta1' => ['en' => 'Start your free trial →', 'ar' => 'ابدأ تجربتك المجانية ←'],
+        'cta1' => ['en' => 'Join the free beta →', 'ar' => 'انضم إلى النسخة التجريبية ←'],
         'cta2' => ['en' => 'See How It Works', 'ar' => 'شاهد كيف يعمل'],
         'trust1' => ['en' => 'Arabic & English Support', 'ar' => 'دعم بالعربية والإنجليزية'],
-        'trust2' => ['en' => 'PINT AE Ready', 'ar' => 'جاهز لمعيار PINT AE'],
-        'trust3' => ['en' => 'No Migration Required', 'ar' => 'لا حاجة لأي ترحيل'],
-        'proof' => ['en' => 'Designed for UAE finance teams', 'ar' => 'مصمم لفرق المالية في الإمارات'],
+        'trust2' => ['en' => 'Multi-Currency Ready', 'ar' => 'جاهز لعملات متعددة'],
+        'trust3' => ['en' => 'Free During Beta', 'ar' => 'مجاني خلال النسخة التجريبية'],
+        'proof' => ['en' => 'Designed for freelancers and small teams', 'ar' => 'مصمم للمستقلين والفرق الصغيرة'],
     ],
     'dash' => [
-        'title' => ['en' => 'Compliance Overview', 'ar' => 'نظرة عامة على التوافق'],
-        'sub'   => ['en' => 'Live · FTA-connected', 'ar' => 'مباشر · متصل بالهيئة'],
-        'chart' => ['en' => 'Clearance rate — last 7 days', 'ar' => 'نسبة القبول — آخر ٧ أيام'],
-        'cleared'   => ['en' => 'Cleared',   'ar' => 'مقبولة'],
+        'title' => ['en' => 'Invoice Overview', 'ar' => 'نظرة عامة على الفواتير'],
+        'sub'   => ['en' => 'Live · always organized', 'ar' => 'مباشر · منظم دائمًا'],
+        'chart' => ['en' => 'Payments — last 7 days', 'ar' => 'الدفعات — آخر ٧ أيام'],
+        'cleared'   => ['en' => 'Paid',   'ar' => 'مدفوعة'],
         'pending'   => ['en' => 'Pending',   'ar' => 'قيد الانتظار'],
         'submitted' => ['en' => 'Submitted', 'ar' => 'مرسلة'],
-        'chip'      => ['en' => 'FTA Connected', 'ar' => 'متصل بهيئة الضرائب'],
+        'chip'      => ['en' => 'Client connected', 'ar' => 'متصل بالعميل'],
     ],
     'invoice' => [
-        'preview_aria' => ['en' => 'Live sample tax invoice created with Invoqly', 'ar' => 'نموذج مباشر لفاتورة ضريبية أُنشئت باستخدام إنفوكلي'],
-        'type' => ['en' => 'Tax invoice', 'ar' => 'فاتورة ضريبية'],
+        'preview_aria' => ['en' => 'Live sample international invoice created with Invoqly', 'ar' => 'نموذج مباشر لفاتورة دولية أُنشئت باستخدام إنفوكلي'],
+        'type' => ['en' => 'International invoice', 'ar' => 'فاتورة دولية'],
         'business' => ['en' => 'Noura Studio LLC', 'ar' => 'استوديو نور ذ.م.م'],
-        'address' => ['en' => 'Dubai Design District · Dubai, UAE', 'ar' => 'حي دبي للتصميم · دبي، الإمارات'],
-        'trn' => ['en' => 'TRN 100492837400003', 'ar' => 'الرقم الضريبي ١٠٠٤٩٢٨٣٧٤٠٠٠٠٣'],
+        'address' => ['en' => 'Abu Dhabi · United Arab Emirates', 'ar' => 'أبوظبي · الإمارات العربية المتحدة'],
+        'trn' => ['en' => 'Business ID AE-2048', 'ar' => 'معرّف العمل AE-2048'],
         'invoice_no' => ['en' => 'Invoice number', 'ar' => 'رقم الفاتورة'],
         'issue_date' => ['en' => 'Issue date', 'ar' => 'تاريخ الإصدار'],
         'due_date' => ['en' => 'Due date', 'ar' => 'تاريخ الاستحقاق'],
         'issued' => ['en' => '01 Oct 2026', 'ar' => '٠١ أكتوبر ٢٠٢٦'],
         'due' => ['en' => '15 Oct 2026', 'ar' => '١٥ أكتوبر ٢٠٢٦'],
         'bill_to' => ['en' => 'Bill to', 'ar' => 'فاتورة إلى'],
-        'customer' => ['en' => 'Al Seef Trading Co.', 'ar' => 'شركة السيف للتجارة'],
-        'customer_address' => ['en' => 'Business Bay · Dubai, UAE', 'ar' => 'الخليج التجاري · دبي، الإمارات'],
+        'customer' => ['en' => 'Northline Media Ltd.', 'ar' => 'نورث لاين ميديا المحدودة'],
+        'customer_address' => ['en' => 'London · United Kingdom', 'ar' => 'لندن · المملكة المتحدة'],
         'description' => ['en' => 'Description', 'ar' => 'الوصف'],
         'qty' => ['en' => 'Qty', 'ar' => 'الكمية'],
         'rate' => ['en' => 'Rate', 'ar' => 'السعر'],
@@ -77,173 +77,173 @@ $I18N = [
         'item1' => ['en' => 'Brand identity design', 'ar' => 'تصميم الهوية التجارية'],
         'item2' => ['en' => 'Monthly content package', 'ar' => 'باقة المحتوى الشهرية'],
         'subtotal' => ['en' => 'Subtotal', 'ar' => 'المجموع الفرعي'],
-        'vat' => ['en' => 'VAT 5%', 'ar' => 'ضريبة القيمة المضافة ٥٪'],
+        'vat' => ['en' => 'Tax 5%', 'ar' => 'الضريبة ٥٪'],
         'total' => ['en' => 'Total due', 'ar' => 'الإجمالي المستحق'],
         'note' => ['en' => 'Thank you for your business.', 'ar' => 'شكرًا لتعاملكم معنا.'],
         'powered' => ['en' => 'Invoice powered by', 'ar' => 'فاتورة مدعومة من'],
-        'status' => ['en' => 'PINT AE validated', 'ar' => 'تم التحقق وفق PINT AE'],
+        'status' => ['en' => 'Ready to send', 'ar' => 'جاهزة للإرسال'],
     ],
     'journey' => [
-        'eyebrow' => ['en' => 'From your tools to clearance', 'ar' => 'من أدواتك إلى قبول الفاتورة'],
-        'title' => ['en' => 'Keep the tools you know. We handle what happens next.', 'ar' => 'احتفظ بأدواتك المعتادة. ونحن نتولى ما بعد ذلك.'],
-        'sub' => ['en' => 'Invoice data flows into Invoqly, is checked against PINT AE requirements, and moves through one traceable compliance journey.', 'ar' => 'تنتقل بيانات الفاتورة إلى إنفوكلي، وتُراجع وفق متطلبات PINT AE، ثم تمر عبر مسار توافق واحد يمكنك تتبعه.'],
+        'eyebrow' => ['en' => 'From draft to paid', 'ar' => 'من المسودة إلى الدفع'],
+        'title' => ['en' => 'Keep the tools you know. See every invoice clearly.', 'ar' => 'احتفظ بأدواتك المعتادة. وتابع كل فاتورة بوضوح.'],
+        'sub' => ['en' => 'Bring invoice details into Invoqly, create a bilingual document, send it to your client and follow its progress in one simple journey.', 'ar' => 'أدخل تفاصيل الفاتورة إلى إنفوكلي، وأنشئ مستندًا ثنائي اللغة، وأرسله إلى عميلك، ثم تابع تقدمه في مسار واحد بسيط.'],
         'sources' => ['en' => 'Your existing systems', 'ar' => 'أنظمتك الحالية'],
         'excel' => ['en' => 'Excel', 'ar' => 'إكسل'],
         'quickbooks' => ['en' => 'QuickBooks', 'ar' => 'كويك بوكس'],
         'zoho' => ['en' => 'Zoho Books', 'ar' => 'زوهو بوكس'],
         'erp' => ['en' => 'ERP / API', 'ar' => 'نظام ERP / API'],
-        'engine' => ['en' => 'Compliance engine', 'ar' => 'محرك التوافق'],
-        'engine_sub' => ['en' => 'Mapping, validation and response tracking', 'ar' => 'مواءمة البيانات والتحقق وتتبع الردود'],
-        's1' => ['en' => 'Imported', 'ar' => 'تم الاستيراد'],
-        's1d' => ['en' => 'Invoice data received', 'ar' => 'تم استلام بيانات الفاتورة'],
-        's2' => ['en' => 'PINT AE validated', 'ar' => 'تم التحقق وفق PINT AE'],
-        's2d' => ['en' => 'Required fields checked', 'ar' => 'تم فحص الحقول المطلوبة'],
-        's3' => ['en' => 'Transmitted', 'ar' => 'تم الإرسال'],
-        's3d' => ['en' => 'Sent through the configured channel', 'ar' => 'أُرسلت عبر القناة المهيأة'],
-        's4' => ['en' => 'Cleared', 'ar' => 'تم القبول'],
-        's4d' => ['en' => 'Response recorded and visible', 'ar' => 'تم تسجيل الرد وإظهاره'],
-        'aria' => ['en' => 'Invoice journey from connected systems through Invoqly to clearance', 'ar' => 'مسار الفاتورة من الأنظمة المتصلة عبر إنفوكلي حتى القبول'],
+        'engine' => ['en' => 'Invoice workspace', 'ar' => 'مساحة عمل الفواتير'],
+        'engine_sub' => ['en' => 'Create, translate and track from one place', 'ar' => 'إنشاء وترجمة ومتابعة من مكان واحد'],
+        's1' => ['en' => 'Drafted', 'ar' => 'مسودة'],
+        's1d' => ['en' => 'Invoice details prepared', 'ar' => 'تم إعداد تفاصيل الفاتورة'],
+        's2' => ['en' => 'Checked', 'ar' => 'تم التحقق'],
+        's2d' => ['en' => 'Totals and fields reviewed', 'ar' => 'تمت مراجعة الحقول والإجماليات'],
+        's3' => ['en' => 'Sent', 'ar' => 'تم الإرسال'],
+        's3d' => ['en' => 'Shared with your client', 'ar' => 'تمت مشاركتها مع عميلك'],
+        's4' => ['en' => 'Paid', 'ar' => 'تم الدفع'],
+        's4d' => ['en' => 'Payment status recorded', 'ar' => 'تم تسجيل حالة الدفع'],
+        'aria' => ['en' => 'Invoice journey from connected tools through Invoqly to payment', 'ar' => 'مسار الفاتورة من أدواتك عبر إنفوكلي حتى الدفع'],
     ],
     'strip' => [
-        'lead' => ['en' => 'Trusted by UAE SMEs in Dubai · Sharjah · Abu Dhabi', 'ar' => 'موثوق من الشركات الصغيرة والمتوسطة في دبي · الشارقة · أبوظبي'],
+        'lead' => ['en' => 'Made for freelancers · studios · consultants · small teams', 'ar' => 'مصمم للمستقلين · الاستوديوهات · المستشارين · الفرق الصغيرة'],
     ],
     'problem' => [
-        'eyebrow' => ['en' => 'The Deadline', 'ar' => 'الموعد النهائي'],
-        'title' => ['en' => 'The UAE E-Invoicing Deadline Is Coming. Most SMEs Aren\'t Ready.', 'ar' => 'الموعد النهائي للفوترة الإلكترونية في الإمارات يقترب. ومعظم الشركات غير جاهزة.'],
-        's1n' => ['en' => '64%', 'ar' => '٦٤٪'],
-        's1l' => ['en' => 'of UAE SMEs still run core finance on Excel', 'ar' => 'من الشركات الصغيرة والمتوسطة في الإمارات لا تزال تدير مالياتها على إكسل'],
-        's2n' => ['en' => '70.4%', 'ar' => '٧٠٫٤٪'],
-        's2l' => ['en' => 'cannot process FTA clearance responses today', 'ar' => 'غير قادرة اليوم على معالجة ردود القبول من هيئة الضرائب'],
-        's3n' => ['en' => '38%', 'ar' => '٣٨٪'],
-        's3l' => ['en' => 'of ERPs have zero native PINT AE support', 'ar' => 'من أنظمة تخطيط الموارد لا تدعم معيار PINT AE أصلًا'],
-        's4n' => ['en' => '31 Mar 2027', 'ar' => '٣١ مارس ٢٠٢٧'],
-        's4l' => ['en' => 'deadline to appoint an Accredited Service Provider', 'ar' => 'الموعد النهائي لتعيين مزوّد خدمة معتمد'],
+        'eyebrow' => ['en' => 'The Everyday Problem', 'ar' => 'المشكلة اليومية'],
+        'title' => ['en' => 'Invoicing Should Not Take More Work Than the Work Itself.', 'ar' => 'لا ينبغي أن تستغرق الفوترة جهدًا أكبر من العمل نفسه.'],
+        's1n' => ['en' => '1 place', 'ar' => 'مكان واحد'],
+        's1l' => ['en' => 'for drafts, sent invoices and payment status', 'ar' => 'للمسودات والفواتير المرسلة وحالة الدفع'],
+        's2n' => ['en' => '2 languages', 'ar' => 'لغتان'],
+        's2l' => ['en' => 'English and Arabic on the same invoice', 'ar' => 'العربية والإنجليزية في الفاتورة نفسها'],
+        's3n' => ['en' => 'Any currency', 'ar' => 'أي عملة'],
+        's3l' => ['en' => 'bill international clients in the currency they use', 'ar' => 'فوتر العملاء الدوليين بالعملة التي يستخدمونها'],
+        's4n' => ['en' => 'Free beta', 'ar' => 'نسخة مجانية'],
+        's4l' => ['en' => 'join early and help shape the product', 'ar' => 'انضم مبكرًا وساهم في تطوير المنتج'],
         'p' => [
-            'en' => 'Large ERPs are building compliance for enterprises — six-month implementations, five-figure annual licences, armies of consultants. SMEs need something that works this quarter, on top of the tools they already run. That gap is exactly where invoices go to die: rejected, uncleared, quietly non-compliant.',
-            'ar' => 'أنظمة تخطيط الموارد الكبرى تبني حلول التوافق للشركات الضخمة — تنفيذ يمتد ستة أشهر، وتراخيص سنوية بخمس خانات، وجيوش من المستشارين. أما الشركات الصغيرة والمتوسطة فتحتاج حلًا يعمل هذا الربع، فوق الأدوات التي تستخدمها فعلًا. في هذه الفجوة تحديدًا تموت الفواتير: مرفوضة، وغير مقبولة، وغير متوافقة في صمت.',
+            'en' => 'Small businesses lose time rebuilding invoices, translating details, chasing clients and checking whether payment arrived. Invoqly brings that work into one calm, bilingual workspace.',
+            'ar' => 'تهدر الأعمال الصغيرة وقتها في إعادة إعداد الفواتير وترجمة التفاصيل ومتابعة العملاء والتحقق من وصول الدفعات. تجمع إنفوكلي كل ذلك في مساحة عمل هادئة وثنائية اللغة.',
         ],
     ],
     'solution' => [
         'eyebrow' => ['en' => 'The Solution', 'ar' => 'الحل'],
-        'title' => ['en' => 'We Sit On Top of Your Existing System. You Stay Compliant.', 'ar' => 'نعمل فوق نظامك الحالي. وأنت تبقى متوافقًا.'],
-        'b1' => ['en' => 'Convert your invoices to PINT AE XML automatically', 'ar' => 'تحويل فواتيرك تلقائيًا إلى صيغة PINT AE XML'],
-        'b2' => ['en' => 'Transmit through an FTA-accredited ASP', 'ar' => 'الإرسال عبر مزوّد خدمة معتمد من هيئة الضرائب'],
-        'b3' => ['en' => 'Handle clearance & rejection responses for you', 'ar' => 'معالجة ردود القبول والرفض نيابةً عنك'],
-        'b4' => ['en' => 'WhatsApp + email alerts the moment something needs attention', 'ar' => 'تنبيهات واتساب وبريد إلكتروني فور وجود ما يستدعي انتباهك'],
+        'title' => ['en' => 'One Simple Workspace From First Draft to Payment.', 'ar' => 'مساحة عمل بسيطة من المسودة الأولى حتى الدفع.'],
+        'b1' => ['en' => 'Create polished English and Arabic invoices', 'ar' => 'إنشاء فواتير احترافية بالعربية والإنجليزية'],
+        'b2' => ['en' => 'Use the currency your international client prefers', 'ar' => 'استخدام العملة التي يفضلها عميلك الدولي'],
+        'b3' => ['en' => 'Track draft, sent, viewed and paid status', 'ar' => 'متابعة حالة المسودة والإرسال والعرض والدفع'],
+        'b4' => ['en' => 'Send friendly reminders when an invoice is overdue', 'ar' => 'إرسال تذكيرات لطيفة عند تأخر الفاتورة'],
         'flow1' => ['en' => 'Your System', 'ar' => 'نظامك'],
         'flow1d' => ['en' => 'Excel · QuickBooks · anything', 'ar' => 'إكسل · QuickBooks · أي نظام'],
         'flow2' => ['en' => 'Invoqly', 'ar' => 'إنفوكلي'],
-        'flow2d' => ['en' => 'PINT AE conversion & transmission', 'ar' => 'تحويل وإرسال وفق PINT AE'],
-        'flow3' => ['en' => 'FTA / ASP', 'ar' => 'هيئة الضرائب / مزوّد معتمد'],
-        'flow3d' => ['en' => 'Clearance & reporting', 'ar' => 'القبول والتقارير'],
-        'caption' => ['en' => 'No migration. No new accounting software. No 6-month integration.', 'ar' => 'لا ترحيل. لا نظام محاسبة جديد. لا تكامل يستغرق ستة أشهر.'],
+        'flow2d' => ['en' => 'Create · translate · track', 'ar' => 'إنشاء · ترجمة · متابعة'],
+        'flow3' => ['en' => 'Your Client', 'ar' => 'عميلك'],
+        'flow3d' => ['en' => 'Receives, views and pays', 'ar' => 'يستلم ويعرض ويدفع'],
+        'caption' => ['en' => 'No complicated setup. No accounting migration. Start with the workflow you already know.', 'ar' => 'بدون إعداد معقد أو ترحيل محاسبي. ابدأ بسير العمل الذي تعرفه بالفعل.'],
     ],
     'how' => [
         'eyebrow' => ['en' => 'How It Works', 'ar' => 'آلية العمل'],
-        'title' => ['en' => 'Live in 48 Hours. Three Steps.', 'ar' => 'جاهز خلال ٤٨ ساعة. بثلاث خطوات.'],
-        't1' => ['en' => 'Connect Your Data', 'ar' => 'اربط بياناتك'],
-        'd1' => ['en' => 'Plug in Excel, QuickBooks or your current tool in minutes — no IT project, no consultants.', 'ar' => 'اربط إكسل أو QuickBooks أو أداتك الحالية خلال دقائق — بدون مشروع تقني ولا مستشارين.'],
-        't2' => ['en' => 'We Handle Compliance', 'ar' => 'نتولى التوافق'],
-        'd2' => ['en' => 'We convert every invoice to PINT AE XML, transmit through an FTA-accredited ASP and track each response.', 'ar' => 'نحوّل كل فاتورة إلى صيغة PINT AE XML، ونرسلها عبر مزوّد معتمد من الهيئة، ونتتبع كل رد.'],
-        't3' => ['en' => 'Stay Compliant', 'ar' => 'ابقَ متوافقًا'],
-        'd3' => ['en' => 'A live dashboard plus WhatsApp & email alerts keeps you ahead of rejections, penalties and rule changes.', 'ar' => 'لوحة متابعة مباشرة وتنبيهات واتساب وبريد إلكتروني تبقيك متقدمًا على الرفض والغرامات وتغيّر اللوائح.'],
+        'title' => ['en' => 'From New Invoice to Paid. Three Steps.', 'ar' => 'من فاتورة جديدة إلى مدفوعة. بثلاث خطوات.'],
+        't1' => ['en' => 'Add the Details', 'ar' => 'أضف التفاصيل'],
+        'd1' => ['en' => 'Enter invoice details or bring them in from the tool you already use.', 'ar' => 'أدخل تفاصيل الفاتورة أو استوردها من الأداة التي تستخدمها بالفعل.'],
+        't2' => ['en' => 'Make It Yours', 'ar' => 'اجعلها بهويتك'],
+        'd2' => ['en' => 'Add your logo, choose a currency and create a clear English or Arabic invoice.', 'ar' => 'أضف شعارك واختر العملة وأنشئ فاتورة واضحة بالعربية أو الإنجليزية.'],
+        't3' => ['en' => 'Send and Track', 'ar' => 'أرسل وتابع'],
+        'd3' => ['en' => 'Share it with your client and keep its sent, viewed and paid status together.', 'ar' => 'شاركها مع عميلك وتابع حالات الإرسال والعرض والدفع في مكان واحد.'],
     ],
     'pricing' => [
-        'eyebrow' => ['en' => 'Pricing', 'ar' => 'الأسعار'],
-        'title' => ['en' => 'Simple Pricing. No Setup Fees.', 'ar' => 'تسعير بسيط. بدون رسوم إعداد.'],
-        'sub' => ['en' => 'Cancel anytime. No migration required.', 'ar' => 'ألغِ في أي وقت. لا حاجة لأي ترحيل.'],
-        'monthly' => ['en' => 'Monthly', 'ar' => 'شهري'],
-        'annual'  => ['en' => 'Annual · 2 mo free', 'ar' => 'سنوي · شهران مجانًا'],
-        'aed' => ['en' => 'AED', 'ar' => 'درهم'],
-        'per_mo' => ['en' => '/mo', 'ar' => '/شهريًا'],
-        'per_yr' => ['en' => '/yr', 'ar' => '/سنويًا'],
-        'plan1' => ['en' => 'Starter', 'ar' => 'البداية'],
-        'plan2' => ['en' => 'Growth',  'ar' => 'النمو'],
-        'plan3' => ['en' => 'Pro',     'ar' => 'الاحترافية'],
-        'popular' => ['en' => 'Most Popular', 'ar' => 'الأكثر شيوعًا'],
+        'eyebrow' => ['en' => 'Early Access', 'ar' => 'الوصول المبكر'],
+        'title' => ['en' => 'Join the Beta Free. Help Shape What Comes Next.', 'ar' => 'انضم إلى النسخة التجريبية مجانًا وساهم في تطوير القادم.'],
+        'sub' => ['en' => 'No card required. We will introduce paid plans only after the product is ready.', 'ar' => 'لا تحتاج إلى بطاقة. سنقدم الخطط المدفوعة فقط بعد جاهزية المنتج.'],
+        'monthly' => ['en' => 'Beta access', 'ar' => 'وصول تجريبي'],
+        'annual'  => ['en' => 'No card required', 'ar' => 'لا تحتاج إلى بطاقة'],
+        'aed' => ['en' => 'USD', 'ar' => 'دولار'],
+        'per_mo' => ['en' => 'during beta', 'ar' => 'خلال النسخة التجريبية'],
+        'per_yr' => ['en' => 'during beta', 'ar' => 'خلال النسخة التجريبية'],
+        'plan1' => ['en' => 'Freelancer', 'ar' => 'المستقل'],
+        'plan2' => ['en' => 'Small Team',  'ar' => 'الفريق الصغير'],
+        'plan3' => ['en' => 'Studio',     'ar' => 'الاستوديو'],
+        'popular' => ['en' => 'Free Beta', 'ar' => 'نسخة تجريبية مجانية'],
         'f1a' => ['en' => 'Up to 50 invoices/month', 'ar' => 'حتى ٥٠ فاتورة شهريًا'],
         'f1b' => ['en' => '1 user', 'ar' => 'مستخدم واحد'],
-        'f1c' => ['en' => 'Email support', 'ar' => 'دعم بالبريد الإلكتروني'],
+        'f1c' => ['en' => 'Multi-currency invoices', 'ar' => 'فواتير بعملات متعددة'],
         'f1d' => ['en' => 'EN/AR interface', 'ar' => 'واجهة عربية وإنجليزية'],
         'f2a' => ['en' => 'Up to 250 invoices/month', 'ar' => 'حتى ٢٥٠ فاتورة شهريًا'],
         'f2b' => ['en' => '3 users', 'ar' => '٣ مستخدمين'],
-        'f2c' => ['en' => 'WhatsApp alerts', 'ar' => 'تنبيهات واتساب'],
-        'f2d' => ['en' => 'Priority Arabic support', 'ar' => 'دعم عربي ذو أولوية'],
+        'f2c' => ['en' => 'Invoice status tracking', 'ar' => 'متابعة حالة الفواتير'],
+        'f2d' => ['en' => 'English and Arabic', 'ar' => 'العربية والإنجليزية'],
         'f3a' => ['en' => 'Unlimited invoices', 'ar' => 'فواتير غير محدودة'],
         'f3b' => ['en' => '10 users', 'ar' => '١٠ مستخدمين'],
-        'f3c' => ['en' => 'API access', 'ar' => 'وصول إلى API'],
-        'f3d' => ['en' => 'Custom reports', 'ar' => 'تقارير مخصصة'],
-        'f3e' => ['en' => 'Dedicated onboarding', 'ar' => 'مرافقة مخصصة للانطلاق'],
-        'cta' => ['en' => 'Start free trial', 'ar' => 'ابدأ التجربة المجانية'],
+        'f3c' => ['en' => 'Custom branding', 'ar' => 'هوية بصرية مخصصة'],
+        'f3d' => ['en' => 'Client activity view', 'ar' => 'عرض نشاط العميل'],
+        'f3e' => ['en' => 'Early product feedback access', 'ar' => 'مشاركة مبكرة في تطوير المنتج'],
+        'cta' => ['en' => 'Join the free beta', 'ar' => 'انضم إلى النسخة التجريبية'],
         'anchor' => [
-            'en' => 'Big accounting platforms charge AED 4,500–15,000/year just for compliance add-ons. Invoqly starts at a fraction of that.',
-            'ar' => 'المنصات المحاسبية الكبرى تتقاضى ٤٥٠٠–١٥٠٠٠ درهم سنويًا مقابل إضافات التوافق وحدها. إنفوكلي يبدأ بجزء يسير من ذلك.',
+            'en' => 'Beta members pay nothing today and help us decide which features matter most.',
+            'ar' => 'أعضاء النسخة التجريبية لا يدفعون شيئًا اليوم ويساعدوننا في تحديد أهم الميزات.',
         ],
     ],
     'faq' => [
         'eyebrow' => ['en' => 'Got questions?', 'ar' => 'عندك أسئلة؟'],
         'title' => ['en' => 'Frequently Asked Questions', 'ar' => 'الأسئلة الشائعة'],
-        'q1' => ['en' => 'Do I need to change my accounting software?', 'ar' => 'هل أحتاج إلى تغيير برنامج المحاسبة لدي؟'],
+        'q1' => ['en' => 'Who is Invoqly for?', 'ar' => 'لمن صُممت إنفوكلي؟'],
         'a1' => [
-            'en' => 'No. Invoqly sits on top of Excel, QuickBooks, Zoho or whatever you already use. We read your invoice data, handle the PINT AE conversion and FTA transmission, and send clearance results straight back to you. Your day-to-day workflow doesn\'t change.',
-            'ar' => 'لا. تعمل إنفوكلي فوق إكسل أو QuickBooks أو Zoho أو أي أداة تستخدمها اليوم. نقرأ بيانات فواتيرك، ونتولى التحويل إلى معيار PINT AE والإرسال إلى الهيئة، ونعيد إليك نتائج القبول مباشرة. لا يتغير شيء في عملك اليومي.',
+            'en' => 'Invoqly is being built for freelancers, consultants, studios and small teams that invoice clients locally or internationally.',
+            'ar' => 'تُبنى إنفوكلي للمستقلين والمستشارين والاستوديوهات والفرق الصغيرة التي تفوتر عملاء محليين أو دوليين.',
         ],
-        'q2' => ['en' => 'What is PINT AE and why does it matter?', 'ar' => 'ما هو معيار PINT AE ولماذا يهم؟'],
+        'q2' => ['en' => 'Is the beta really free?', 'ar' => 'هل النسخة التجريبية مجانية فعلًا؟'],
         'a2' => [
-            'en' => 'PINT AE is the UAE\'s standard format for electronic invoices, based on the global Peppol PINT standard. Under the FTA\'s E-Invoicing rollout, invoices must be issued and exchanged in this exact XML format through accredited channels. If your system can\'t produce valid PINT AE documents, your invoices are not compliant.',
-            'ar' => '‏PINT AE هو صيغة الفواتير الإلكترونية المعتمدة في الإمارات، وهي مبنية على معيار Peppol PINT العالمي. وفق خطة هيئة الضرائب للفوترة الإلكترونية، يجب إصدار الفواتير وتبادلها بهذه الصيغة تحديدًا (XML) عبر قنوات معتمدة. إذا لم يتمكن نظامك من إنتاج مستندات PINT AE صحيحة، ففواتيرك غير متوافقة.',
+            'en' => 'Yes. Early members can test the product without a payment card. We will explain future paid plans before anything changes.',
+            'ar' => 'نعم. يمكن للأعضاء الأوائل تجربة المنتج دون بطاقة دفع. وسنوضح الخطط المدفوعة المستقبلية قبل أي تغيير.',
         ],
-        'q3' => ['en' => 'When is my deadline?', 'ar' => 'متى موعدي النهائي؟'],
+        'q3' => ['en' => 'Can I invoice clients in other countries?', 'ar' => 'هل يمكنني فوترة عملاء في دول أخرى؟'],
         'a3' => [
-            'en' => 'The UAE rollout is phased by annual turnover — the largest businesses go first, SMEs follow in later waves. The fixed date that applies to every registered business is 31 March 2027: by then you must have appointed an Accredited Service Provider. Start your free trial to begin mapping your business to the right readiness steps.',
-            'ar' => 'التطبيق في الإمارات يتم على مراحل حسب حجم الإيرادات السنوية — الشركات الكبرى أولًا ثم الشركات الصغيرة والمتوسطة في مراحل لاحقة. التاريخ الثابت الذي يشمل كل منشأة مسجلة هو ٣١ مارس ٢٠٢٧: بحلوله يجب أن تكون قد عيّنت مزوّد خدمة معتمدًا. ابدأ تجربتك المجانية لتحديد خطوات الجاهزية المناسبة لمنشأتك.',
+            'en' => 'Yes. Invoqly is designed for international clients and multiple currencies. Your local tax and invoicing requirements still depend on your country.',
+            'ar' => 'نعم. صُممت إنفوكلي للعملاء الدوليين والعملات المتعددة، بينما تعتمد متطلبات الضرائب والفوترة المحلية على بلدك.',
         ],
         'q4' => ['en' => 'Do you support Arabic?', 'ar' => 'هل تدعمون اللغة العربية؟'],
         'a4' => [
             'en' => 'Fully. The interface, invoice dashboards, alerts and support are all available in both Arabic and English — switch anytime with one click, exactly like the toggle on this page.',
             'ar' => 'بالكامل. الواجهة ولوحات الفواتير والتنبيهات والدعم متاحة بالعربية والإنجليزية معًا — بدّل متى شئت بنقرة واحدة، تمامًا كما في هذه الصفحة.',
         ],
-        'q5' => ['en' => 'What happens if an invoice gets rejected?', 'ar' => 'ماذا يحدث إذا رُفضت فاتورة؟'],
+        'q5' => ['en' => 'Does Invoqly file taxes for me?', 'ar' => 'هل تقدم إنفوكلي الإقرارات الضريبية نيابةً عني؟'],
         'a5' => [
-            'en' => 'You\'ll know instantly. We send a WhatsApp and email alert with the exact rejection reason, pre-fill the correction for you, and re-transmit once you approve. Rejections are tracked on your dashboard until they\'re cleared — nothing silently fails.',
-            'ar' => 'ستعرف فورًا. نرسل تنبيه واتساب وبريدًا إلكترونيًا مع سبب الرفض بدقة، ونجهّز لك التصحيح مسبقًا، ونعيد الإرسال فور موافقتك. تُتابَع الفواتير المرفوضة على لوحتك حتى قبولها — لا شيء يفشل بصمت.',
+            'en' => 'No. Invoqly helps create and track invoices. It does not file taxes or replace advice from your accountant.',
+            'ar' => 'لا. تساعدك إنفوكلي على إنشاء الفواتير ومتابعتها، ولا تقدم الإقرارات الضريبية ولا تستبدل نصيحة محاسبك.',
         ],
         'q6' => ['en' => 'Is there a setup fee?', 'ar' => 'هل توجد رسوم إعداد؟'],
         'a6' => [
-            'en' => 'No. Every plan is a flat monthly subscription with zero setup fees, zero onboarding charges and no lock-in. Cancel anytime — your data exports back to your system in one click.',
-            'ar' => 'لا. جميع خططنا اشتراك شهري ثابت بلا رسوم إعداد ولا رسوم بدء تشغيل ولا التزام طويل. ألغِ متى شئت — وتُصدَّر بياناتك إلى نظامك بنقرة واحدة.',
+            'en' => 'No. Joining the beta is free and does not start a paid subscription.',
+            'ar' => 'لا. الانضمام إلى النسخة التجريبية مجاني ولا يبدأ اشتراكًا مدفوعًا.',
         ],
-        'q7' => ['en' => 'How long does onboarding take?', 'ar' => 'كم يستغرق بدء التشغيل؟'],
+        'q7' => ['en' => 'What happens after I join?', 'ar' => 'ماذا يحدث بعد انضمامي؟'],
         'a7' => [
-            'en' => '48 hours for most SMEs. Day one we connect your data source and map your invoice fields; day two we run a live test transmission and you\'re operational. No IT team required — we do the heavy lifting.',
-            'ar' => '٤٨ ساعة لمعظم الشركات الصغيرة والمتوسطة. في اليوم الأول نربط مصدر بياناتك ونطابق حقول فواتيرك؛ وفي الثاني نجري إرسالًا تجريبيًا فعليًا وتصبح جاهزًا للعمل. لا حاجة لفريق تقني — نحن نتولى العمل الثقيل.',
+            'en' => 'You join the early-access list. We will invite a small number of businesses at a time and ask for practical feedback.',
+            'ar' => 'تنضم إلى قائمة الوصول المبكر، وسندعو عددًا محدودًا من الأعمال في كل مرة ونطلب ملاحظات عملية.',
         ],
     ],
     'cta' => [
-        'title' => ['en' => 'The Deadline Is Fixed. Your Preparation Isn\'t.', 'ar' => 'الموعد النهائي محدد. استعدادك لم يكتمل بعد.'],
+        'title' => ['en' => 'Better Invoices Start With a Clearer Workflow.', 'ar' => 'الفواتير الأفضل تبدأ بسير عمل أوضح.'],
         'body' => [
-            'en' => '73% of UAE businesses have no operational plan for after their e-invoicing system goes live. Don\'t be one of them.',
-            'ar' => '٧٣٪ من الشركات الإماراتية لا تملك خطة تشغيلية لما بعد انطلاق نظام الفوترة الإلكترونية لديها. لا تكن أحدها.',
+            'en' => 'Join the early-access list and help us build the invoicing experience your business actually needs.',
+            'ar' => 'انضم إلى قائمة الوصول المبكر وساعدنا في بناء تجربة الفوترة التي يحتاجها عملك فعلًا.',
         ],
-        'btn' => ['en' => 'Book Your Free Compliance Check →', 'ar' => 'احجز فحص التوافق المجاني ←'],
-        'sub' => ['en' => '15 minutes. No sales pitch. Just a clear answer on whether you\'re ready.', 'ar' => '١٥ دقيقة. بدون عرض بيع. فقط إجابة واضحة: هل أنت جاهز أم لا.'],
+        'btn' => ['en' => 'Join the Free Beta →', 'ar' => 'انضم إلى النسخة التجريبية ←'],
+        'sub' => ['en' => 'No card. No payment. Just early access and a chance to shape the product.', 'ar' => 'بدون بطاقة أو دفع. وصول مبكر وفرصة للمساهمة في تطوير المنتج.'],
     ],
     'footer' => [
-        'tag' => ['en' => 'Built for UAE SMEs', 'ar' => 'صُمم لشركات الإمارات الصغيرة والمتوسطة'],
+        'tag' => ['en' => 'Bilingual invoicing for global businesses', 'ar' => 'فواتير ثنائية اللغة للأعمال العالمية'],
         'contact' => ['en' => 'Contact', 'ar' => 'تواصل'],
         'eyebrow' => ['en' => 'Your next invoice can be ready', 'ar' => 'فاتورتك القادمة يمكن أن تكون جاهزة'],
-        'title' => ['en' => 'Ready to make compliance feel simple?', 'ar' => 'هل أنت جاهز لتجعل التوافق أكثر بساطة؟'],
-        'action' => ['en' => 'Start your free trial', 'ar' => 'ابدأ تجربتك المجانية'],
+        'title' => ['en' => 'Ready to make invoicing feel simple?', 'ar' => 'هل أنت جاهز لجعل الفوترة أكثر بساطة؟'],
+        'action' => ['en' => 'Join the free beta', 'ar' => 'انضم إلى النسخة التجريبية'],
         'back' => ['en' => 'Back to top', 'ar' => 'العودة إلى الأعلى'],
-        'marquee1' => ['en' => 'PINT AE ready', 'ar' => 'جاهز لمعيار PINT AE'],
-        'marquee2' => ['en' => 'Built for UAE SMEs', 'ar' => 'مصمم للشركات الإماراتية'],
+        'marquee1' => ['en' => 'Multi-currency ready', 'ar' => 'جاهز لعملات متعددة'],
+        'marquee2' => ['en' => 'Built for global small businesses', 'ar' => 'مصمم للأعمال الصغيرة العالمية'],
         'marquee3' => ['en' => 'Arabic + English', 'ar' => 'العربية + الإنجليزية'],
-        'marquee4' => ['en' => 'No migration required', 'ar' => 'دون الحاجة إلى ترحيل'],
+        'marquee4' => ['en' => 'Free during beta', 'ar' => 'مجاني خلال النسخة التجريبية'],
         'rights' => ['en' => '© 2026 Invoqly. All rights reserved.', 'ar' => '© ٢٠٢٦ إنفوكلي. جميع الحقوق محفوظة.'],
     ],
     'modal' => [
-        'title' => ['en' => 'Book Your Free Compliance Check', 'ar' => 'احجز فحص التوافق المجاني'],
-        'sub' => ['en' => '15 minutes, no sales pitch. We\'ll confirm your FTA deadline and where you stand.', 'ar' => '١٥ دقيقة بدون عرض بيع. نؤكد لك موعدك النهائي لدى الهيئة ومدى جاهزيتك.'],
+        'title' => ['en' => 'Join the Invoqly Free Beta', 'ar' => 'انضم إلى نسخة إنفوكلي التجريبية'],
+        'sub' => ['en' => 'Tell us a little about your work. No card or payment is required.', 'ar' => 'أخبرنا قليلًا عن عملك. لا تحتاج إلى بطاقة أو دفع.'],
         'f_name'    => ['en' => 'Full Name', 'ar' => 'الاسم الكامل'],
         'f_email'   => ['en' => 'Work Email', 'ar' => 'البريد الإلكتروني للعمل'],
         'f_phone'   => ['en' => 'Phone', 'ar' => 'رقم الهاتف'],
@@ -253,10 +253,10 @@ $I18N = [
         'opt1' => ['en' => 'Under 50', 'ar' => 'أقل من ٥٠'],
         'opt2' => ['en' => '50–250', 'ar' => '٥٠–٢٥٠'],
         'opt3' => ['en' => '250+', 'ar' => 'أكثر من ٢٥٠'],
-        'submit' => ['en' => 'Book My Free Check', 'ar' => 'احجز فحصي المجاني'],
+        'submit' => ['en' => 'Join the Free Beta', 'ar' => 'انضم إلى النسخة التجريبية'],
         'privacy' => ['en' => 'No spam. One confirmation email, that\'s it.', 'ar' => 'لا رسائل مزعجة — بريد تأكيد واحد فقط.'],
-        'success_t' => ['en' => 'You\'re booked in.', 'ar' => 'تم استلام طلبك!'],
-        'success_b' => ['en' => 'We\'ll be in touch within 24 hours to schedule your free check.', 'ar' => 'سنتواصل معك خلال ٢٤ ساعة لتحديد موعد فحصك المجاني.'],
+        'success_t' => ['en' => 'You\'re on the list.', 'ar' => 'أنت الآن على القائمة!'],
+        'success_b' => ['en' => 'We\'ll email you when your beta invitation is ready.', 'ar' => 'سنرسل إليك بريدًا عندما تصبح دعوتك للنسخة التجريبية جاهزة.'],
         'close_aria' => ['en' => 'Close', 'ar' => 'إغلاق'],
         'menu_aria'  => ['en' => 'Open menu', 'ar' => 'فتح القائمة'],
     ],
@@ -398,8 +398,9 @@ html[dir="rtl"] .btn:active{ transform:scale(.97) translate(-1px,1px); box-shado
   border-bottom:1px solid rgba(10,37,64,.08);
 }
 .nav-inner{ display:grid; grid-template-columns:1fr auto 1fr; align-items:center; height:72px; gap:16px; }
-.logo{ display:inline-flex; align-items:baseline; font-family:var(--font-display); font-weight:700; font-size:23px; letter-spacing:-.01em; color:var(--navy); }
+.logo{ display:inline-flex; align-items:center; gap:8px; font-family:var(--font-display); font-weight:700; font-size:23px; letter-spacing:-.01em; color:var(--navy); }
 .logo .dot{ color:var(--teal); }
+.logo-mark{width:34px;height:28px;display:block;flex:none;object-fit:contain}.footer .logo-mark{width:40px;height:32px}.invoice-brand-mark{width:27px;height:22px;display:block;flex:none;object-fit:contain}
 html[dir="rtl"] .logo{ letter-spacing:0; }
 .nav-links{ display:none; gap:30px; justify-content:center; }
 .nav-link{ color:var(--muted); font-weight:500; font-size:15px; transition:color .2s; }
@@ -550,7 +551,7 @@ html[dir="rtl"] .drawer:not(.open){ transform:translateX(-105%); }
 .invoice-dates{margin:0;display:grid;gap:6px}.invoice-dates div{display:flex;justify-content:space-between;gap:16px}.invoice-dates dt,.invoice-dates dd{margin:0;font-size:11px}.invoice-dates dt{color:var(--muted)}.invoice-dates dd{font-weight:700;text-align:end}
 .invoice-table{overflow:hidden;border:1px solid var(--border);border-radius:14px}.invoice-tr{display:grid;grid-template-columns:minmax(180px,1.7fr) .42fr .72fr .78fr;gap:12px;align-items:center;padding:12px 14px;border-top:1px solid var(--border);font-size:11.5px}.invoice-tr:first-child{border-top:0}.invoice-tr>*:not(:first-child){text-align:end;font-variant-numeric:tabular-nums}.invoice-tr strong{font-size:12px}.invoice-th{background:var(--ink);color:#fff;font-family:var(--font-mono);font-size:9px;font-weight:700;letter-spacing:.08em;text-transform:uppercase}
 .invoice-bottom{display:grid;grid-template-columns:1fr minmax(240px,.72fr);gap:38px;padding-top:24px}.invoice-note{display:flex;flex-direction:column;align-items:flex-start;gap:12px}.invoice-note p{font-family:var(--font-display);font-size:14px;color:var(--muted)}.invoice-totals{margin:0;display:grid;gap:7px}.invoice-totals div{display:flex;justify-content:space-between;gap:20px}.invoice-totals dt,.invoice-totals dd{margin:0;font-size:11.5px}.invoice-totals dt{color:var(--muted)}.invoice-totals dd{font-weight:700;font-variant-numeric:tabular-nums}.invoice-totals .grand-total{margin-top:5px;padding-top:11px;border-top:1px solid var(--ink)}.invoice-totals .grand-total dt,.invoice-totals .grand-total dd{color:var(--ink);font-size:15px;font-weight:800}
-.invoice-powered{display:flex;align-items:baseline;justify-content:flex-end;gap:7px;margin-top:28px;padding-top:14px;border-top:1px solid var(--border);font-size:9.5px;color:var(--faint)}.invoice-powered strong{font-size:14px;color:var(--ink);letter-spacing:-.04em}.invoice-powered i{color:var(--teal-ink);font-style:normal}
+.invoice-powered{display:flex;align-items:center;justify-content:flex-end;gap:7px;margin-top:28px;padding-top:14px;border-top:1px solid var(--border);font-size:9.5px;color:var(--faint)}.invoice-powered strong{font-size:14px;color:var(--ink);letter-spacing:-.04em}.invoice-powered i{color:var(--teal-ink);font-style:normal}
 html[dir="rtl"] .invoice-title{text-align:start}html[dir="rtl"] .invoice-tr>*:not(:first-child),html[dir="rtl"] .invoice-dates dd{text-align:start}
 @media(max-width:620px){.invoice-preview{padding:20px}.invoice-top{gap:14px}.business-logo{width:42px;height:42px}.invoice-business span:last-child{display:none}.invoice-title strong{font-size:17px}.invoice-meta-grid{grid-template-columns:1fr;gap:18px}.invoice-tr{grid-template-columns:minmax(125px,1.4fr) .34fr .72fr}.invoice-tr>*:nth-child(3){display:none}.invoice-bottom{grid-template-columns:1fr;gap:20px}.invoice-note p{display:none}.invoice-powered{margin-top:20px}}
 
@@ -916,7 +917,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
 @media(max-width:960px){.nav{top:10px;inset-inline:10px}.nav-inner{grid-template-columns:1fr auto}.nav-right>.btn,.nav-right>.lang-switch{display:none}.hero{padding-top:132px}.hero h1{font-size:clamp(3.4rem,13vw,6.5rem)}.strip-inner{justify-content:center}.section-head{margin-bottom:48px}}
 @media(max-width:620px){.hero{padding-bottom:78px}.hero h1{font-size:clamp(3.15rem,16vw,4.7rem)}.hero-sub{font-size:16px}.hero-ctas{width:100%;flex-direction:column}.hero-ctas .btn{width:100%}.hero-trust{gap:7px}.trust-item{font-size:10.5px}.hero-proof{flex-direction:column}.hero-visual{margin-top:62px}.dash-row:nth-child(n+4){display:none}.inv-client{max-width:112px}.strip-logos{gap:17px}.stats-grid{grid-template-columns:1fr}.stat{min-height:190px}.step{min-height:280px}#solution{width:calc(100% - 16px);margin:8px;border-radius:30px}.h2{font-size:clamp(2.5rem,12vw,3.8rem)}}
 
-/* Hero invoice + connected clearance journey */
+/* Hero invoice + connected payment journey */
 .hero .hero-grid{max-width:1320px;display:grid;grid-template-columns:minmax(0,1.3fr) minmax(430px,.9fr);gap:clamp(40px,5vw,76px);align-items:center;text-align:start}
 .hero .hero-grid>div:first-child{min-width:0;align-items:flex-start}
 .hero .hero-grid h1{max-width:760px;font-size:clamp(3.4rem,4.8vw,5.6rem);line-height:.93;text-wrap:balance}
@@ -974,7 +975,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
 <!-- ============ NAVBAR ============ -->
 <header class="nav" id="navbar">
   <div class="container nav-inner">
-    <a class="logo" href="#" data-i18n-aria="brand.home_aria" aria-label="<?= tx('brand.home_aria') ?>"><span data-i18n="brand.name"><?= tx('brand.name') ?></span><span class="dot" translate="no">.</span></a>
+    <a class="logo" href="#" data-i18n-aria="brand.home_aria" aria-label="<?= tx('brand.home_aria') ?>"><img class="logo-mark" src="assets/invoqly-mark.svg" alt=""><span data-i18n="brand.name"><?= tx('brand.name') ?></span><span class="dot" translate="no">.</span></a>
     <nav class="nav-links" aria-label="Main">
       <a class="nav-link" href="#how" data-i18n="nav.how"><?= tx('nav.how') ?></a>
       <a class="nav-link" href="#pricing" data-i18n="nav.pricing"><?= tx('nav.pricing') ?></a>
@@ -998,7 +999,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
 <div class="drawer-backdrop" id="drawerBackdrop" hidden></div>
 <aside class="drawer" id="drawer" aria-label="Mobile menu">
   <div class="drawer-head">
-    <span class="logo"><span data-i18n="brand.name"><?= tx('brand.name') ?></span><span class="dot" translate="no">.</span></span>
+    <span class="logo"><img class="logo-mark" src="assets/invoqly-mark.svg" alt=""><span data-i18n="brand.name"><?= tx('brand.name') ?></span><span class="dot" translate="no">.</span></span>
     <button class="drawer-close" type="button" id="drawerClose" data-i18n-aria="modal.close_aria" aria-label="<?= tx('modal.close_aria') ?>">
       <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M18 6 6 18M6 6l12 12"/></svg>
     </button>
@@ -1078,14 +1079,14 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
         </div>
         <div class="invoice-table" role="table">
           <div class="invoice-tr invoice-th" role="row"><span data-i18n="invoice.description"><?= tx('invoice.description') ?></span><span data-i18n="invoice.qty"><?= tx('invoice.qty') ?></span><span data-i18n="invoice.rate"><?= tx('invoice.rate') ?></span><span data-i18n="invoice.amount"><?= tx('invoice.amount') ?></span></div>
-          <div class="invoice-tr" role="row"><strong data-i18n="invoice.item1"><?= tx('invoice.item1') ?></strong><span>1</span><span>AED 3,200</span><span>AED 3,200</span></div>
-          <div class="invoice-tr" role="row"><strong data-i18n="invoice.item2"><?= tx('invoice.item2') ?></strong><span>1</span><span>AED 1,800</span><span>AED 1,800</span></div>
+          <div class="invoice-tr" role="row"><strong data-i18n="invoice.item1"><?= tx('invoice.item1') ?></strong><span>1</span><span>USD 3,200</span><span>USD 3,200</span></div>
+          <div class="invoice-tr" role="row"><strong data-i18n="invoice.item2"><?= tx('invoice.item2') ?></strong><span>1</span><span>USD 1,800</span><span>USD 1,800</span></div>
         </div>
         <div class="invoice-bottom">
           <div class="invoice-note"><span class="badge badge-green" data-i18n="invoice.status"><?= tx('invoice.status') ?></span><p data-i18n="invoice.note"><?= tx('invoice.note') ?></p></div>
-          <dl class="invoice-totals"><div><dt data-i18n="invoice.subtotal"><?= tx('invoice.subtotal') ?></dt><dd>AED 5,000</dd></div><div><dt data-i18n="invoice.vat"><?= tx('invoice.vat') ?></dt><dd>AED 250</dd></div><div class="grand-total"><dt data-i18n="invoice.total"><?= tx('invoice.total') ?></dt><dd>AED 5,250</dd></div></dl>
+          <dl class="invoice-totals"><div><dt data-i18n="invoice.subtotal"><?= tx('invoice.subtotal') ?></dt><dd>USD 5,000</dd></div><div><dt data-i18n="invoice.vat"><?= tx('invoice.vat') ?></dt><dd>USD 250</dd></div><div class="grand-total"><dt data-i18n="invoice.total"><?= tx('invoice.total') ?></dt><dd>USD 5,250</dd></div></dl>
         </div>
-        <div class="invoice-powered"><span data-i18n="invoice.powered"><?= tx('invoice.powered') ?></span><strong><span data-i18n="brand.name"><?= tx('brand.name') ?></span><i translate="no">.</i></strong></div>
+        <div class="invoice-powered"><img class="invoice-brand-mark" src="assets/invoqly-mark.svg" alt=""><span data-i18n="invoice.powered"><?= tx('invoice.powered') ?></span><strong><span data-i18n="brand.name"><?= tx('brand.name') ?></span><i translate="no">.</i></strong></div>
       </div>
       </div>
       <span class="dash-ground" aria-hidden="true"></span>
@@ -1133,7 +1134,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <?php for ($r = 0; $r < 2; $r++): ?>
-    <span>PINT AE Ready</span><span>FTA-Accredited Channels</span><span>Excel · QuickBooks · Any System</span><span>48-Hour Onboarding</span><span>Arabic &amp; English</span><span>UAE E-Invoicing 2027</span>
+    <span>Multi-Currency</span><span>English + Arabic</span><span>Excel · QuickBooks · Any System</span><span>Free Beta Access</span><span>Professional Invoices</span><span>Built for Global Business</span>
     <?php endfor; ?>
   </div>
 </div>
@@ -1295,7 +1296,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
         <h3 data-i18n="pricing.plan1"><?= tx('pricing.plan1') ?></h3>
         <div class="price">
           <span class="cur" data-i18n="pricing.aed"><?= tx('pricing.aed') ?></span>
-          <span class="amount" data-m="299" data-a="2,990">299</span>
+          <span class="amount" data-m="0" data-a="0">0</span>
           <span class="per js-per" data-i18n="pricing.per_mo"><?= tx('pricing.per_mo') ?></span>
         </div>
         <ul class="plan-feat">
@@ -1315,7 +1316,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
         <h3 data-i18n="pricing.plan2"><?= tx('pricing.plan2') ?></h3>
         <div class="price">
           <span class="cur" data-i18n="pricing.aed"><?= tx('pricing.aed') ?></span>
-          <span class="amount" data-m="599" data-a="5,990">599</span>
+          <span class="amount" data-m="0" data-a="0">0</span>
           <span class="per js-per" data-i18n="pricing.per_mo"><?= tx('pricing.per_mo') ?></span>
         </div>
         <ul class="plan-feat">
@@ -1331,7 +1332,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
         <h3 data-i18n="pricing.plan3"><?= tx('pricing.plan3') ?></h3>
         <div class="price">
           <span class="cur" data-i18n="pricing.aed"><?= tx('pricing.aed') ?></span>
-          <span class="amount" data-m="999" data-a="9,990">999</span>
+          <span class="amount" data-m="0" data-a="0">0</span>
           <span class="per js-per" data-i18n="pricing.per_mo"><?= tx('pricing.per_mo') ?></span>
         </div>
         <ul class="plan-feat">
@@ -1408,7 +1409,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
   <div class="footer-meta">
     <div class="container footer-meta-row">
       <div class="footer-brand">
-        <span class="logo"><span data-i18n="brand.name"><?= tx('brand.name') ?></span><span class="dot" translate="no">.</span></span>
+        <span class="logo"><img class="logo-mark" src="assets/invoqly-mark-light.svg" alt=""><span data-i18n="brand.name"><?= tx('brand.name') ?></span><span class="dot" translate="no">.</span></span>
         <p class="foot-tag" data-i18n="footer.tag"><?= tx('footer.tag') ?></p>
       </div>
       <nav class="footer-links" aria-label="Footer">

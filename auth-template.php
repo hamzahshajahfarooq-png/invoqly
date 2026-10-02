@@ -27,7 +27,7 @@ function renderAuth(string $mode): void
     .skip{position:fixed;inset-inline-start:-999px;top:8px;z-index:100;background:var(--ink);color:#fff;padding:10px 16px;border-radius:999px}.skip:focus{inset-inline-start:8px}
     .nav{position:sticky;top:0;z-index:50;height:68px;border-bottom:1px solid var(--line);background:rgba(243,242,236,.86);backdrop-filter:blur(18px) saturate(150%)}
     .nav-in{width:min(1240px,100%);height:100%;margin:auto;padding-inline:clamp(20px,4vw,40px);display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:20px}
-    .brand{display:flex;align-items:center;gap:10px;width:max-content;font-size:19px;font-weight:800;letter-spacing:-.05em}.brand-mark{width:32px;height:32px;display:grid;place-items:center;border-radius:50%;background:var(--ink);color:var(--mint);font-family:var(--serif);font-style:italic;font-weight:600}.brand-dot{color:var(--green)}
+    .brand{display:flex;align-items:center;gap:10px;width:max-content;font-size:19px;font-weight:800;letter-spacing:-.05em}.brand-mark{width:35px;height:28px;display:block;flex:none;object-fit:contain}.brand-dot{color:var(--green)}
     .nav-links{display:flex;gap:28px;font-size:13px;font-weight:600;color:var(--muted)}.nav-links a{background:linear-gradient(var(--green),var(--green)) 0 100%/0 1px no-repeat;transition:color .2s,background-size .25s}.nav-links a:hover{color:var(--ink);background-size:100% 1px}
     .nav-end{display:flex;align-items:center;justify-content:flex-end;gap:10px}.lang{min-width:44px;min-height:38px;display:grid;place-items:center;border:1px solid var(--line);border-radius:999px;font-size:12px;font-weight:700}.nav-question{font-size:12px;color:var(--muted)}.outline{min-height:40px;display:inline-flex;align-items:center;padding-inline:17px;border:1px solid rgba(36,107,55,.35);border-radius:999px;color:var(--green);font-size:12px;font-weight:700;transition:.2s}.outline:hover{border-color:var(--green);background:rgba(166,244,107,.2)}
     .shell{width:min(1240px,100%);min-height:calc(100vh - 68px);margin:auto;padding:24px clamp(20px,4vw,40px) 40px;display:grid;grid-template-columns:1.05fr .95fr}
@@ -56,7 +56,7 @@ function renderAuth(string $mode): void
   <a class="skip" href="#auth"><?= $t('Skip to sign in', 'انتقل إلى تسجيل الدخول') ?></a>
   <header class="nav">
     <div class="nav-in">
-      <a class="brand" href="index.php?lang=<?= $lang ?>" aria-label="<?= $t('Invoqly home', 'الصفحة الرئيسية لإنفوكلي') ?>"><span class="brand-mark"><?= $rtl ? 'إ' : 'I' ?></span><span><?= $t('Invoqly', 'إنفوكلي') ?><span class="brand-dot">.</span></span></a>
+      <a class="brand" href="index.php?lang=<?= $lang ?>" aria-label="<?= $t('Invoqly home', 'الصفحة الرئيسية لإنفوكلي') ?>"><img class="brand-mark" src="assets/invoqly-mark.svg" alt=""><span><?= $t('Invoqly', 'إنفوكلي') ?><span class="brand-dot">.</span></span></a>
       <nav class="nav-links" aria-label="<?= $t('Main navigation', 'التنقل الرئيسي') ?>">
         <a href="index.php#how"><?= $t('How it works', 'كيف يعمل') ?></a><a href="index.php#pricing"><?= $t('Pricing', 'الأسعار') ?></a><a href="index.php#faq"><?= $t('FAQ', 'الأسئلة الشائعة') ?></a>
       </nav>

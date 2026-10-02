@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 120 96" role="img" aria-labelledby="title">
+  <title id="title">Invoqly</title>
+  <path fill="#fff" d="M8 25h20v63H8zM8 4h20v15H8z"/>
+  <path fill="#fff" fill-rule="evenodd" d="M72 5a42 42 0 1 0 0 84 42 42 0 0 0 27.4-10.2L86.5 64.4A23 23 0 1 1 95 47c0 5.1-1.7 9.8-4.5 13.6l13.6 15.2A42 42 0 0 0 72 5Z"/>
+  <path fill="#A6F46B" d="M66 54h22l25 30H91Z"/>
+</svg>
