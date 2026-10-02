@@ -1023,7 +1023,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
   <div class="container hero-grid">
     <div>
       <span class="hero-badge fade-1">
-        <svg width="18" height="13" viewBox="0 0 18 13" aria-hidden="true" style="border-radius:2px; box-shadow:0 0 0 1px rgba(10,37,64,.15)"><rect width="18" height="13" fill="#F5F7F8"/><rect width="18" height="4.34" fill="#00843D"/><rect y="8.66" width="18" height="4.34" fill="#101820"/><rect width="4.5" height="13" fill="#EF3340"/></svg>
+        <svg width="18" height="18" viewBox="0 0 24 24" aria-hidden="true" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M3 12h18M12 3c2.3 2.5 3.5 5.5 3.5 9S14.3 18.5 12 21c-2.3-2.5-3.5-5.5-3.5-9S9.7 5.5 12 3Z"/></svg>
         <span data-i18n="hero.badge"><?= tx('hero.badge') ?></span>
       </span>
       <h1 class="display">
