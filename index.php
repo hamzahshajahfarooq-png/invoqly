@@ -31,6 +31,8 @@ $I18N = [
         'faq'     => ['en' => 'FAQ',          'ar' => 'الأسئلة الشائعة'],
         'login'   => ['en' => 'Sign in',      'ar' => 'تسجيل الدخول'],
         'cta'     => ['en' => 'Join the free beta', 'ar' => 'انضم إلى النسخة التجريبية'],
+        'terms'   => ['en' => 'Terms', 'ar' => 'الشروط'],
+        'privacy' => ['en' => 'Privacy', 'ar' => 'الخصوصية'],
     ],
     'hero' => [
         'badge' => ['en' => 'Built for independent businesses worldwide', 'ar' => 'صُمم للأعمال المستقلة حول العالم'],
@@ -861,10 +863,12 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
 .eyebrow{margin-bottom:22px;padding:8px 14px;border:1px solid currentColor;border-radius:999px;letter-spacing:.12em}
 .eyebrow::after{width:7px;height:7px;border-radius:50%;opacity:1}
 
-.btn{min-height:52px;padding-inline:26px;font-family:'Inter','IBM Plex Sans Arabic',sans-serif;font-size:14px;font-weight:700;box-shadow:none!important}
-.btn-primary{background:var(--ink);color:#fff}.btn-primary:hover{background:#27302A;transform:translateY(-2px)}
+.btn{position:relative;isolation:isolate;overflow:hidden;min-height:52px;padding-inline:26px;font-family:'Inter','IBM Plex Sans Arabic',sans-serif;font-size:14px;font-weight:700;box-shadow:none!important}
+.btn::before{content:"";position:absolute;inset:-1px;z-index:-1;background:var(--teal);transform:translateX(-102%);transition:transform .22s ease}
+[dir="rtl"] .btn::before{transform:translateX(102%)}.btn:hover::before,[dir="rtl"] .btn:hover::before{transform:none}
+.btn-primary{background:var(--ink);color:#fff}.btn-primary:hover{background:var(--ink);color:var(--ink);transform:translateY(-2px)}
 .btn-ghost{background:rgba(255,255,255,.56);border-color:rgba(17,23,19,.18);color:var(--ink)}
-.btn-ghost:hover{background:#fff;border-color:var(--ink);transform:translateY(-2px)}
+.btn-ghost::before{background:var(--ink)}.btn-ghost:hover{background:transparent;border-color:var(--ink);color:#fff;transform:translateY(-2px)}
 
 .nav{top:16px;inset-inline:16px;border:1px solid transparent;border-radius:999px}
 .nav.scrolled{background:rgba(248,248,243,.84);border:1px solid rgba(17,23,19,.12);box-shadow:0 12px 44px rgba(17,23,19,.1)}
@@ -1416,6 +1420,8 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
         <a href="#how" data-i18n="nav.how"><?= tx('nav.how') ?></a>
         <a href="#pricing" data-i18n="nav.pricing"><?= tx('nav.pricing') ?></a>
         <a href="#faq" data-i18n="nav.faq"><?= tx('nav.faq') ?></a>
+        <a href="terms.php?lang=<?= $LANG ?>" data-i18n="nav.terms"><?= tx('nav.terms') ?></a>
+        <a href="privacy.php?lang=<?= $LANG ?>" data-i18n="nav.privacy"><?= tx('nav.privacy') ?></a>
         <span class="foot-bottom" data-i18n="footer.rights"><?= tx('footer.rights') ?></span>
       </nav>
       <button class="footer-pill back-top magnetic" id="backToTop" type="button" data-i18n-aria="footer.back" aria-label="<?= tx('footer.back') ?>">

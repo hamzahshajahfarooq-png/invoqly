@@ -28,11 +28,11 @@
     .quote{max-width:520px;margin:0;padding-top:28px;border-top:1px solid transparent;border-image:linear-gradient(90deg,rgba(17,23,19,.25),transparent) 1}.quote blockquote{position:relative;margin:0;padding-inline-start:30px;font-family:var(--serif);font-size:17px;font-weight:300;line-height:1.55}.quote-mark{position:absolute;inset-inline-start:0;top:-10px;color:var(--green);font-family:var(--serif);font-size:48px;font-style:italic}.person{display:flex;align-items:center;gap:11px;margin-top:18px;font-size:11px;font-weight:600;color:var(--muted)}.person-avatar{width:36px;height:36px;display:grid;place-items:center;border-radius:50%;background:rgba(36,107,55,.14);color:var(--green);font-family:var(--serif);font-style:italic;font-size:16px}
     .form-panel{min-height:720px;padding:clamp(38px,6vw,76px);display:flex;align-items:center;border:1px solid var(--line);border-radius:0 28px 28px 0;background:rgba(252,252,248,.72)}[dir=rtl] .form-panel{border-radius:28px 0 0 28px}
     .form-wrap{width:min(400px,100%);margin:auto}.form-head{display:flex;align-items:flex-start;justify-content:space-between;gap:20px}.overline{font-size:10px;font-weight:700;letter-spacing:.2em;text-transform:uppercase;color:var(--green)}.form-head h1{margin:6px 0 0;font-family:var(--serif);font-size:34px;font-weight:400;letter-spacing:-.035em}.index{color:rgba(36,107,55,.22);font-family:var(--serif);font-size:42px;font-variant-numeric:tabular-nums;line-height:1}.trial-note{margin:10px 0 0;color:var(--muted);font-size:12px;line-height:1.5}
-    .google{width:100%;min-height:50px;margin-top:28px;display:flex;align-items:center;justify-content:center;gap:11px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.64);color:var(--ink);font-weight:600;cursor:pointer;transition:transform .18s,border-color .2s,background .2s,box-shadow .2s}.google:hover{transform:translateY(-2px);border-color:rgba(17,23,19,.3);background:#fff;box-shadow:0 12px 26px rgba(17,23,19,.08)}.google:active{transform:scale(.98)}
+    .google{position:relative;isolation:isolate;overflow:hidden;width:100%;min-height:50px;margin-top:28px;display:flex;align-items:center;justify-content:center;gap:11px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.64);color:var(--ink);font-weight:600;cursor:pointer;transition:transform .18s,border-color .2s,background .2s,box-shadow .2s}.google::before{content:"";position:absolute;inset:0;z-index:-1;background:rgba(166,244,107,.34);transform:translateX(-102%);transition:transform .22s ease}[dir=rtl] .google::before{transform:translateX(102%)}.google:hover::before,[dir=rtl] .google:hover::before{transform:none}.google:hover{transform:translateY(-2px);border-color:rgba(17,23,19,.3);box-shadow:0 12px 26px rgba(17,23,19,.08)}.google:active{transform:scale(.98)}
     .divider{display:flex;align-items:center;gap:12px;margin:24px 0;color:#828A84;font-size:9px;font-weight:700;letter-spacing:.17em;text-transform:uppercase}.divider::before,.divider::after{content:"";height:1px;flex:1;background:var(--line)}
     form{display:grid;gap:17px}.field label{display:flex;justify-content:space-between;margin-bottom:7px;font-size:12px;font-weight:700}.field a{color:var(--green);font-weight:600}.input-wrap{position:relative}.field input{width:100%;min-height:50px;padding:0 14px;border:1px solid var(--line);border-radius:14px;background:rgba(255,255,255,.64);color:var(--ink);outline:0;transition:.2s}.field input::placeholder{color:#979E99}.field input:focus{border-color:var(--green);background:#fff;box-shadow:0 0 0 4px rgba(36,107,55,.1)}.password input{padding-inline-end:48px}.eye{position:absolute;inset-inline-end:5px;top:5px;width:40px;height:40px;display:grid;place-items:center;border:0;border-radius:50%;background:transparent;color:var(--muted);cursor:pointer}.eye:hover{background:rgba(17,23,19,.06);color:var(--ink)}
     .check{display:flex;align-items:center;gap:10px;width:max-content;max-width:100%;font-size:12px;color:var(--muted);cursor:pointer}.check input{position:absolute;opacity:0}.check-box{width:19px;height:19px;display:grid;place-items:center;flex:none;border:1px solid rgba(36,107,55,.45);border-radius:6px;background:#fff;transition:.18s}.check input:checked+.check-box{background:var(--green);border-color:var(--green)}.check svg{opacity:0;color:#fff}.check input:checked+.check-box svg{opacity:1}.check input:focus-visible+.check-box{box-shadow:0 0 0 4px rgba(36,107,55,.13)}
-    .submit{width:100%;min-height:52px;border:0;border-radius:14px;background:var(--ink);color:#fff;font-weight:700;cursor:pointer;transition:transform .18s,background .2s,box-shadow .2s}.submit:hover{transform:translateY(-2px);background:var(--deep);box-shadow:0 14px 28px rgba(17,23,19,.16)}.submit:active{transform:scale(.98)}
+    .submit{position:relative;isolation:isolate;overflow:hidden;width:100%;min-height:52px;border:0;border-radius:14px;background:var(--ink);color:#fff;font-weight:700;cursor:pointer;transition:transform .18s,color .2s,box-shadow .2s}.submit::before{content:"";position:absolute;inset:0;z-index:-1;background:var(--mint);transform:translateX(-102%);transition:transform .22s ease}[dir=rtl] .submit::before{transform:translateX(102%)}.submit:hover{transform:translateY(-2px);color:var(--ink);box-shadow:0 14px 28px rgba(17,23,19,.16)}.submit:hover::before,[dir=rtl] .submit:hover::before{transform:none}.submit:active{transform:scale(.98)}.submit:disabled,.google:disabled{cursor:wait;opacity:.65}
     .switch{text-align:center;margin-top:22px;font-size:12px;color:var(--muted)}.switch a,.legal a{color:var(--green);font-weight:700;background:linear-gradient(var(--green),var(--green)) 0 100%/0 1px no-repeat;transition:background-size .25s}.switch a:hover,.legal a:hover{background-size:100% 1px}.legal{margin-top:18px;text-align:center;font-size:10.5px;line-height:1.6;color:#8A918C}.status{min-height:20px;margin-top:12px;text-align:center;font-size:12px;color:var(--green)}
     :focus-visible{outline:2px solid var(--green);outline-offset:3px}
     @media(max-width:900px){.nav-in{grid-template-columns:1fr auto}.nav-links,.nav-question{display:none}.shell{grid-template-columns:1fr;max-width:720px}.form-panel{order:1;min-height:auto;border-radius:24px 24px 0 0;padding-block:58px}.editorial{order:2;min-height:600px;border-inline-end:1px solid var(--line);border-top:0;border-radius:0 0 24px 24px}[dir=rtl] .form-panel{border-radius:24px 24px 0 0}[dir=rtl] .editorial{border-inline-start:1px solid var(--line);border-radius:0 0 24px 24px}}
@@ -49,7 +49,7 @@
         <a href="index.html#how">How it works</a><a href="index.html#pricing">Pricing</a><a href="index.html#faq">FAQ</a>
       </nav>
       <div class="nav-end">
-        <a class="lang" href="signup.html" lang="ar">عربي</a>
+        <a class="lang" href="signup-ar.html" lang="ar">عربي</a>
         <span class="nav-question">Already a member?</span>
         <a class="outline" href="login.html">Sign in</a>
       </div>
@@ -57,14 +57,14 @@
   </header>
   <main class="shell">
     <section class="editorial" aria-labelledby="editorial-title">
-      <div class="kicker">UAE e-invoicing, made clear</div>
+      <div class="kicker">Bilingual invoicing, made clear</div>
       <div>
         <div class="edition">Free trial · No setup fee</div>
         <h2 class="welcome" id="editorial-title">Start with <em>clarity.</em></h2>
-        <p class="editorial-sub">One place to prepare, validate and follow every invoice without replacing the tools your team already knows.</p>
+        <p class="editorial-sub">One place to create bilingual invoices, bill international clients and follow every payment.</p>
       </div>
       <figure class="quote">
-        <blockquote><span class="quote-mark" aria-hidden="true">“</span>Compliance should feel like a clear workflow, not another system your finance team has to fight.</blockquote>
+        <blockquote><span class="quote-mark" aria-hidden="true">“</span>Invoicing should feel like a clear conversation with your client, in the language and currency they understand.</blockquote>
         <figcaption class="person"><span class="person-avatar">I</span><span>The Invoqly product principle</span></figcaption>
       </figure>
     </section>
@@ -80,21 +80,26 @@
         <form id="authForm" novalidate>
           <div class="field"><label for="name">Full name</label><input id="name" name="name" type="text" autocomplete="name" required placeholder="Your name"></div>          <div class="field"><label for="email">Work email</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.ae"></div>
           <div class="field password"><label for="password"><span>Password</span></label><div class="input-wrap"><input id="password" name="password" type="password" autocomplete="new-password" minlength="8" required placeholder="At least 8 characters"><button class="eye" type="button" id="togglePassword" aria-label="Show password"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
-          <label class="check"><input type="checkbox" required><span class="check-box"><svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="m5 12 4 4L19 6"/></svg></span><span>I agree to the Terms and Privacy Policy</span></label>
           <button class="submit" type="submit">Start my free trial</button>
         </form>
         <div class="status" id="status" role="status" aria-live="polite"></div>
         <p class="switch">Already have an account? <a href="login.html">Sign in</a></p>
-        <p class="legal">By continuing, you agree to our <a href="#">Terms</a> and <a href="#">Privacy Policy</a>.</p>
+        <p class="legal">By creating an account or continuing, you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
       </div>
     </section>
   </main>
+  <script src="assets/supabase-config.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2.117.2/dist/umd/supabase.min.js"></script>
   <script>
     (function(){
-      var pass=document.getElementById('password'),toggle=document.getElementById('togglePassword'),status=document.getElementById('status'),form=document.getElementById('authForm');
+      var pass=document.getElementById('password'),toggle=document.getElementById('togglePassword'),status=document.getElementById('status'),form=document.getElementById('authForm'),google=document.getElementById('googleButton');
+      var config=window.INVOQLY_CONFIG||{},client=null,isSignup=true;
+      if(config.supabaseUrl&&config.supabasePublishableKey&&window.supabase){client=window.supabase.createClient(config.supabaseUrl,config.supabasePublishableKey)}
+      function message(en,ar,isError){status.textContent='en'==='ar'?ar:en;status.style.color=isError?'#A1372A':'var(--green)'}
+      function ready(){if(client)return true;message('Authentication setup is almost ready. Add the Supabase project URL and publishable key first.','إعداد تسجيل الدخول شبه جاهز. أضف رابط مشروع Supabase والمفتاح العام أولاً.',true);return false}
       toggle.addEventListener('click',function(){var showing=pass.type==='text';pass.type=showing?'password':'text';toggle.setAttribute('aria-label',showing?'Show password':'Hide password');pass.focus()});
-      form.addEventListener('submit',function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return}status.textContent='Demo form ready to connect to your authentication backend.'});
-      document.getElementById('googleButton').addEventListener('click',function(){status.textContent='Google sign-in is ready to connect.'});
+      form.addEventListener('submit',async function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return}if(!ready())return;var submit=form.querySelector('.submit');submit.disabled=true;message('Please wait…','يرجى الانتظار…');var email=form.email.value.trim(),password=form.password.value,result;if(isSignup){result=await client.auth.signUp({email:email,password:password,options:{data:{full_name:form.name.value.trim()},emailRedirectTo:location.origin+'/login.html?verified=1'}})}else{result=await client.auth.signInWithPassword({email:email,password:password})}submit.disabled=false;if(result.error){message(result.error.message,result.error.message,true);return}if(isSignup&&!result.data.session){message('Check your email to confirm your account.','تحقق من بريدك الإلكتروني لتأكيد حسابك.');return}location.href='dashboard.html'});
+      google.addEventListener('click',async function(){if(!ready())return;google.disabled=true;message('Opening Google…','جارٍ فتح Google…');var result=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+'/dashboard.html'}});if(result.error){google.disabled=false;message(result.error.message,result.error.message,true)}});
     }());
   </script>
 </body>
