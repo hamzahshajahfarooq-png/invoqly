@@ -10,14 +10,15 @@ begin
  path:=auth.uid()::text||'/'||b::text||'/logo.png';
  insert into public.business_logos(business_id,storage_path,original_name,content_type,size_bytes) values(b,path,'logo.png','image/png',128);
  update public.businesses set logo_path=path where id=b;
- foreach path in array array['missing_issue','missing_paid','before_issue'] loop
+ foreach path in array array['missing_issue','missing_paid'] loop
   caught:=false;
   begin perform public.save_invoice_with_payment(null,b,c,case when path='missing_issue' then null else current_date end,null,'USD','en','','','[{"description":"Date validation","quantity":1,"unit_price":10}]','paid',case when path='missing_paid' then null when path='before_issue' then current_date-1 else current_date end);
   exception when others then caught:=true;end;
   if not caught then raise exception 'Date validation failed: %',path;end if;
  end loop;
  path:=auth.uid()::text||'/'||b::text||'/logo.png';
- i:=public.save_invoice_with_payment(null,b,c,current_date,null,'KWD','en','','','[{"description":"Paid work","quantity":1,"unit_price":1.234,"tax_rate":0}]','paid',current_date);
+ i:=public.save_invoice_with_payment(null,b,c,current_date,null,'KWD','en','','','[{"description":"Paid work","quantity":1,"unit_price":1.234,"tax_rate":0}]','paid',current_date-7);
+ if (select min(paid_at::date) from public.payments where invoice_id=i)<>current_date-7 then raise exception 'Advance payment date lost';end if;
  if (select status from public.invoices where id=i)<>'paid' or (select due_date from public.invoices where id=i) is not null then raise exception 'Paid status or due date failed';end if;
  if (select sum(amount) from public.payments where invoice_id=i)<>1.234 then raise exception 'Paid amount lost precision';end if;
  if (select seller_snapshot->>'logo_path' from public.invoices where id=i)<>path then raise exception 'Logo snapshot failed';end if;
@@ -29,7 +30,7 @@ begin
  if (select status from public.invoices where id=j)<>'draft' or exists(select 1 from public.payments where invoice_id=j) then raise exception 'Pending invoice incorrectly settled';end if;
  update public.invoices set status='sent' where id=j;
  perform public.record_invoice_payment(j,25,now(),'cash','partial');
- perform public.mark_invoice_paid(j,current_date);
+ perform public.mark_invoice_paid(j,current_date-2);
  if (select sum(amount) from public.payments where invoice_id=j)<>100 or (select count(*) from public.payments where invoice_id=j)<>2 then raise exception 'Remaining balance settlement failed';end if;
  caught:=false;begin perform public.save_invoice_with_payment(null,b,c,current_date,null,'USD','en','','','[{"description":"Test","quantity":1,"unit_price":100}]','paid',current_date+1);exception when others then caught:=true;end;
  if not caught or (select count(*) from public.invoices where business_id=b)<>2 then raise exception 'Invalid payment atomic rollback failed';end if;
