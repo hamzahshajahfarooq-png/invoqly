@@ -37,3 +37,11 @@ The local `.vendor/workspace-preview.php` QA fixture, if present, is excluded fr
 ## Current scope
 
 Payments are records of money received, not transactions. Issuing an invoice changes its status but does not email it or submit it to a government system. PDF export uses the browser print dialog. Business logo inputs accept public HTTPS image URLs; upload storage is not implemented. There is one business per workspace in this release, no paid subscription checkout, team management or public invoice-sharing links.
+
+## Paid invoices and business logos
+- Invoice editor offers Pending (due date required) or Paid (payment date, no due date).
+- Paid saves finalize the invoice and record its full payment atomically. Issued invoices also support marking the remaining balance as paid.
+- The Editorial invoice design is used for preview and browser Print / save PDF, including payment status/date, recorded payments and balance.
+- Business settings accept PNG/JPG/WebP uploads up to 2 MB. `business_logos` stores owner-scoped metadata; the private `business-logos` bucket holds the files. Invoice snapshots retain the uploaded logo path. Signed URLs are refreshed for printing; replacing a logo preserves older invoice logos.
+- Apply `database/invoqly-paid-and-logos.sql` once on an existing Invoqly schema. `database/verify-paid-and-logos.sql` verifies payments, dates, snapshots and isolation in a rolled-back transaction.
+- Verification included database integration checks and a mocked local browser fixture for Paid/Pending controls, preview and upload UI. The fixture does not perform a real Storage upload.
