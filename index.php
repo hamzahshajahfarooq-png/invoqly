@@ -2,7 +2,7 @@
 /* ---------------------------------------------------------------------------
  * Invoqly — international invoicing landing page (single-file PHP)
  * Drop this file on any PHP 7.4+ host. No build step, no database.
- * Language: server-side render via ?lang=ar — client toggle swaps instantly.
+ * English interface with international currency support.
  * --------------------------------------------------------------------------- */
 
 header('Content-Type: text/html; charset=utf-8');
@@ -114,7 +114,7 @@ $I18N = [
         'title' => ['en' => 'Invoicing Should Not Take More Work Than the Work Itself.', 'ar' => 'لا ينبغي أن تستغرق الفوترة جهدًا أكبر من العمل نفسه.'],
         's1n' => ['en' => '1 place', 'ar' => 'مكان واحد'],
         's1l' => ['en' => 'for drafts, sent invoices and payment status', 'ar' => 'للمسودات والفواتير المرسلة وحالة الدفع'],
-        's2n' => ['en' => '2 languages', 'ar' => 'لغتان'],
+        's2n' => ['en' => '165', 'ar' => 'لغتان'],
         's2l' => ['en' => 'Currencies for clients worldwide', 'ar' => 'العربية والإنجليزية في الفاتورة نفسها'],
         's3n' => ['en' => 'Any currency', 'ar' => 'أي عملة'],
         's3l' => ['en' => 'bill international clients in the currency they use', 'ar' => 'فوتر العملاء الدوليين بالعملة التي يستخدمونها'],

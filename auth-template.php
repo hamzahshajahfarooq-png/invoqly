@@ -68,7 +68,7 @@ function renderAuth(string $mode): void
   </header>
   <main class="shell">
     <section class="editorial" aria-labelledby="editorial-title">
-      <div class="kicker"><?= $t('Bilingual invoicing, made clear', 'فوترة ثنائية اللغة، بكل وضوح') ?></div>
+      <div class="kicker"><?= $t('International invoicing, made clear', 'فوترة ثنائية اللغة، بكل وضوح') ?></div>
       <div>
         <div class="edition"><?= $t($isSignup ? 'Free trial · No setup fee' : 'Your invoice workspace · Secure access', $isSignup ? 'تجربة مجانية · دون رسوم إعداد' : 'مساحة فواتيرك · دخول آمن') ?></div>
         <h2 class="welcome" id="editorial-title"><?= $t($isSignup ? 'Start with' : 'Welcome', $isSignup ? 'ابدأ' : 'مرحبًا') ?> <em><?= $t($isSignup ? 'clarity.' : 'back.', $isSignup ? 'بوضوح.' : 'بعودتك.') ?></em></h2>
