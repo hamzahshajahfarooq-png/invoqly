@@ -54,7 +54,7 @@ Render-PhpPage -Source 'dashboard.php' -Destination 'dashboard-ar.html' -Languag
 
 Remove-Item Env:INVOQLY_LANG -ErrorAction SilentlyContinue
 
-Copy-Item -Path (Join-Path $projectRoot 'assets\*') -Destination $assetDir -Force
+Copy-Item -Path (Join-Path $projectRoot 'assets\*') -Destination $assetDir -Force -Recurse
 Copy-Item -LiteralPath (Join-Path $projectRoot '_redirects') -Destination (Join-Path $publicDir '_redirects') -Force
 
 Write-Output 'Static Cloudflare build created in public/'

@@ -4,7 +4,7 @@ declare(strict_types=1);
 function renderAuth(string $mode): void
 {
     $isSignup = $mode === 'signup';
-    $lang = (($_GET['lang'] ?? getenv('INVOQLY_LANG') ?: 'en') === 'ar') ? 'ar' : 'en';
+    $lang = 'en';
     $rtl = $lang === 'ar';
     $t = static fn(string $en, string $ar): string => htmlspecialchars($rtl ? $ar : $en, ENT_QUOTES, 'UTF-8');
     $switchUrl = ($isSignup ? 'signup.php' : 'login.php') . '?lang=' . ($rtl ? 'en' : 'ar');
@@ -61,7 +61,6 @@ function renderAuth(string $mode): void
         <a href="index.php#how"><?= $t('How it works', 'كيف يعمل') ?></a><a href="index.php#pricing"><?= $t('Pricing', 'الأسعار') ?></a><a href="index.php#faq"><?= $t('FAQ', 'الأسئلة الشائعة') ?></a>
       </nav>
       <div class="nav-end">
-        <a class="lang" href="<?= $switchUrl ?>" lang="<?= $rtl ? 'en' : 'ar' ?>"><?= $rtl ? 'EN' : 'عربي' ?></a>
         <span class="nav-question"><?= $t($isSignup ? 'Already a member?' : 'New here?', $isSignup ? 'لديك حساب؟' : 'مستخدم جديد؟') ?></span>
         <a class="outline" href="<?= $alternateUrl ?>?lang=<?= $lang ?>"><?= $t($isSignup ? 'Sign in' : 'Create account', $isSignup ? 'تسجيل الدخول' : 'إنشاء حساب') ?></a>
       </div>
@@ -73,10 +72,10 @@ function renderAuth(string $mode): void
       <div>
         <div class="edition"><?= $t($isSignup ? 'Free trial · No setup fee' : 'Your invoice workspace · Secure access', $isSignup ? 'تجربة مجانية · دون رسوم إعداد' : 'مساحة فواتيرك · دخول آمن') ?></div>
         <h2 class="welcome" id="editorial-title"><?= $t($isSignup ? 'Start with' : 'Welcome', $isSignup ? 'ابدأ' : 'مرحبًا') ?> <em><?= $t($isSignup ? 'clarity.' : 'back.', $isSignup ? 'بوضوح.' : 'بعودتك.') ?></em></h2>
-        <p class="editorial-sub"><?= $t($isSignup ? 'One place to create bilingual invoices, bill international clients and follow every payment.' : 'Your invoices, clients and payment activity are waiting exactly where you left them.', $isSignup ? 'مكان واحد لإنشاء فواتير ثنائية اللغة وفوترة العملاء الدوليين ومتابعة كل دفعة.' : 'فواتيرك وعملاؤك ونشاط المدفوعات في انتظارك تمامًا حيث تركتها.') ?></p>
+        <p class="editorial-sub"><?= $t($isSignup ? 'One place to create professional invoices, bill international clients and follow every payment.' : 'Your invoices, clients and payment activity are waiting exactly where you left them.', $isSignup ? 'مكان واحد لإنشاء فواتير ثنائية اللغة وفوترة العملاء الدوليين ومتابعة كل دفعة.' : 'فواتيرك وعملاؤك ونشاط المدفوعات في انتظارك تمامًا حيث تركتها.') ?></p>
       </div>
       <figure class="quote">
-        <blockquote><span class="quote-mark" aria-hidden="true">“</span><?= $t('Invoicing should feel like a clear conversation with your client, in the language and currency they understand.', 'يجب أن تبدو الفوترة كمحادثة واضحة مع عميلك، باللغة والعملة التي يفهمها.') ?></blockquote>
+        <blockquote><span class="quote-mark" aria-hidden="true">“</span><?= $t('Invoicing should feel like a clear conversation with your client, with clear details and the currency they use.', 'يجب أن تبدو الفوترة كمحادثة واضحة مع عميلك، باللغة والعملة التي يفهمها.') ?></blockquote>
         <figcaption class="person"><span class="person-avatar">I</span><span><?= $t('The Invoqly product principle', 'مبدأ المنتج في إنفوكلي') ?></span></figcaption>
       </figure>
     </section>
@@ -92,7 +91,7 @@ function renderAuth(string $mode): void
         <form id="authForm" novalidate>
           <?php if ($isSignup): ?><div class="field"><label for="name"><?= $t('Full name', 'الاسم الكامل') ?></label><input id="name" name="name" type="text" autocomplete="name" required placeholder="<?= $t('Your name', 'اسمك') ?>"></div><?php endif; ?>
           <div class="field"><label for="email"><?= $t('Work email', 'البريد الإلكتروني للعمل') ?></label><input id="email" name="email" type="email" autocomplete="email" required placeholder="you@company.ae"></div>
-          <div class="field password"><label for="password"><span><?= $t('Password', 'كلمة المرور') ?></span><?php if (!$isSignup): ?><a href="#"><?= $t('Forgot?', 'نسيت؟') ?></a><?php endif; ?></label><div class="input-wrap"><input id="password" name="password" type="password" autocomplete="<?= $isSignup ? 'new-password' : 'current-password' ?>" minlength="8" required placeholder="<?= $t($isSignup ? 'At least 8 characters' : 'Enter your password', $isSignup ? '٨ أحرف على الأقل' : 'أدخل كلمة المرور') ?>"><button class="eye" type="button" id="togglePassword" aria-label="<?= $t('Show password', 'إظهار كلمة المرور') ?>"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
+          <div class="field password"><label for="password"><span><?= $t('Password', 'كلمة المرور') ?></span><?php if (!$isSignup): ?><a href="#" id="forgotPassword"><?= $t('Forgot?', 'نسيت؟') ?></a><?php endif; ?></label><div class="input-wrap"><input id="password" name="password" type="password" autocomplete="<?= $isSignup ? 'new-password' : 'current-password' ?>" minlength="8" required placeholder="<?= $t($isSignup ? 'At least 8 characters' : 'Enter your password', $isSignup ? '٨ أحرف على الأقل' : 'أدخل كلمة المرور') ?>"><button class="eye" type="button" id="togglePassword" aria-label="<?= $t('Show password', 'إظهار كلمة المرور') ?>"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7S2 12 2 12Z"/><circle cx="12" cy="12" r="3"/></svg></button></div></div>
           <button class="submit" type="submit"><?= $t($isSignup ? 'Start my free trial' : 'Sign in to Invoqly', $isSignup ? 'ابدأ تجربتي المجانية' : 'تسجيل الدخول إلى إنفوكلي') ?></button>
         </form>
         <div class="status" id="status" role="status" aria-live="polite"></div>
@@ -111,6 +110,7 @@ function renderAuth(string $mode): void
       if(config.supabaseUrl&&config.supabasePublishableKey&&window.supabase){client=window.supabase.createClient(config.supabaseUrl,config.supabasePublishableKey)}
       function message(en,ar,isError){status.textContent='<?= $lang ?>'==='ar'?ar:en;status.style.color=isError?'#A1372A':'var(--green)'}
       function ready(){if(client)return true;message('Authentication setup is almost ready. Add the Supabase project URL and publishable key first.','إعداد تسجيل الدخول شبه جاهز. أضف رابط مشروع Supabase والمفتاح العام أولاً.',true);return false}
+      var forgot=document.getElementById('forgotPassword');if(forgot)forgot.addEventListener('click',async function(e){e.preventDefault();if(!ready())return;if(!form.email.checkValidity()||!form.email.value){message('Enter your email address first.','أدخل بريدك الإلكتروني أولاً.',true);form.email.focus();return}try{var r=await client.auth.resetPasswordForEmail(form.email.value.trim(),{redirectTo:location.origin+'/'+dashboardPath});if(r.error)throw r.error;message('Check your email for a password reset link.','تحقق من بريدك لرابط استعادة كلمة المرور.')}catch(err){message(err.message,err.message,true)}});
       toggle.addEventListener('click',function(){var showing=pass.type==='text';pass.type=showing?'password':'text';toggle.setAttribute('aria-label',showing?'<?= $t('Show password', 'إظهار كلمة المرور') ?>':'<?= $t('Hide password', 'إخفاء كلمة المرور') ?>');pass.focus()});
       form.addEventListener('submit',async function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return}if(!ready())return;var submit=form.querySelector('.submit');submit.disabled=true;message('Please wait…','يرجى الانتظار…');var email=form.email.value.trim(),password=form.password.value,result;if(isSignup){result=await client.auth.signUp({email:email,password:password,options:{data:{full_name:form.name.value.trim()},emailRedirectTo:location.origin+'/'+loginPath}})}else{result=await client.auth.signInWithPassword({email:email,password:password})}submit.disabled=false;if(result.error){message(result.error.message,result.error.message,true);return}if(isSignup&&!result.data.session){message('Check your email to confirm your account.','تحقق من بريدك الإلكتروني لتأكيد حسابك.');return}location.href=dashboardPath});
       google.addEventListener('click',async function(){if(!ready())return;google.disabled=true;message('Opening Google…','جارٍ فتح Google…');var result=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+'/'+dashboardPath}});if(result.error){google.disabled=false;message(result.error.message,result.error.message,true)}});

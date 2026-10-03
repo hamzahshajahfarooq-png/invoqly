@@ -1,13 +1,13 @@
 <?php
 /* ---------------------------------------------------------------------------
- * Invoqly — international bilingual invoicing landing page (single-file PHP)
+ * Invoqly — international invoicing landing page (single-file PHP)
  * Drop this file on any PHP 7.4+ host. No build step, no database.
  * Language: server-side render via ?lang=ar — client toggle swaps instantly.
  * --------------------------------------------------------------------------- */
 
 header('Content-Type: text/html; charset=utf-8');
 
-$LANG = (($_GET['lang'] ?? 'en') === 'ar') ? 'ar' : 'en';
+$LANG = 'en';
 
 $I18N = [
     'brand' => [
@@ -17,11 +17,11 @@ $I18N = [
     ],
     'meta' => [
         'title' => [
-            'en' => 'Invoqly — Bilingual Invoicing for Global Businesses',
+            'en' => 'Invoqly — Invoicing for Global Businesses',
             'ar' => 'إنفوكلي — فواتير ثنائية اللغة للأعمال حول العالم',
         ],
         'desc' => [
-            'en' => 'Create, send and track professional invoices in English and Arabic, with multi-currency support built for independent businesses worldwide.',
+            'en' => 'Create professional invoices, bill in currencies worldwide and record payments in one organized workspace.',
             'ar' => 'أنشئ فواتير احترافية وأرسلها وتابعها بالعربية والإنجليزية، مع دعم العملات المتعددة للأعمال المستقلة حول العالم.',
         ],
     ],
@@ -39,12 +39,12 @@ $I18N = [
         'title1' => ['en' => 'Create Invoices', 'ar' => 'أنشئ فواتيرك'],
         'title2' => ['en' => 'Clients Actually Understand.', 'ar' => 'بلغة يفهمها عملاؤك.'],
         'sub' => [
-            'en' => 'Create polished invoices in English and Arabic, bill in the currency your client uses, and keep every sent, viewed and paid invoice in one clear place.',
+            'en' => 'Create polished invoices, bill in the currency your client uses, and keep every draft, issued and paid invoice in one clear place.',
             'ar' => 'أنشئ فواتير احترافية بالعربية والإنجليزية، وفوتر بالعملة التي يستخدمها عميلك، وتابع كل فاتورة مرسلة أو معروضة أو مدفوعة في مكان واحد.',
         ],
         'cta1' => ['en' => 'Join the free beta →', 'ar' => 'انضم إلى النسخة التجريبية ←'],
         'cta2' => ['en' => 'See How It Works', 'ar' => 'شاهد كيف يعمل'],
-        'trust1' => ['en' => 'Arabic & English Support', 'ar' => 'دعم بالعربية والإنجليزية'],
+        'trust1' => ['en' => 'Professional Invoice Templates', 'ar' => 'دعم بالعربية والإنجليزية'],
         'trust2' => ['en' => 'Multi-Currency Ready', 'ar' => 'جاهز لعملات متعددة'],
         'trust3' => ['en' => 'Free During Beta', 'ar' => 'مجاني خلال النسخة التجريبية'],
         'proof' => ['en' => 'Designed for freelancers and small teams', 'ar' => 'مصمم للمستقلين والفرق الصغيرة'],
@@ -88,7 +88,7 @@ $I18N = [
     'journey' => [
         'eyebrow' => ['en' => 'From draft to paid', 'ar' => 'من المسودة إلى الدفع'],
         'title' => ['en' => 'Keep the tools you know. See every invoice clearly.', 'ar' => 'احتفظ بأدواتك المعتادة. وتابع كل فاتورة بوضوح.'],
-        'sub' => ['en' => 'Bring invoice details into Invoqly, create a bilingual document, send it to your client and follow its progress in one simple journey.', 'ar' => 'أدخل تفاصيل الفاتورة إلى إنفوكلي، وأنشئ مستندًا ثنائي اللغة، وأرسله إلى عميلك، ثم تابع تقدمه في مسار واحد بسيط.'],
+        'sub' => ['en' => 'Bring invoice details into Invoqly, create a professional document, export a PDF and record payments in one simple journey.', 'ar' => 'أدخل تفاصيل الفاتورة إلى إنفوكلي، وأنشئ مستندًا ثنائي اللغة، وأرسله إلى عميلك، ثم تابع تقدمه في مسار واحد بسيط.'],
         'sources' => ['en' => 'Your existing systems', 'ar' => 'أنظمتك الحالية'],
         'excel' => ['en' => 'Excel', 'ar' => 'إكسل'],
         'quickbooks' => ['en' => 'QuickBooks', 'ar' => 'كويك بوكس'],
@@ -115,20 +115,20 @@ $I18N = [
         's1n' => ['en' => '1 place', 'ar' => 'مكان واحد'],
         's1l' => ['en' => 'for drafts, sent invoices and payment status', 'ar' => 'للمسودات والفواتير المرسلة وحالة الدفع'],
         's2n' => ['en' => '2 languages', 'ar' => 'لغتان'],
-        's2l' => ['en' => 'English and Arabic on the same invoice', 'ar' => 'العربية والإنجليزية في الفاتورة نفسها'],
+        's2l' => ['en' => 'Currencies for clients worldwide', 'ar' => 'العربية والإنجليزية في الفاتورة نفسها'],
         's3n' => ['en' => 'Any currency', 'ar' => 'أي عملة'],
         's3l' => ['en' => 'bill international clients in the currency they use', 'ar' => 'فوتر العملاء الدوليين بالعملة التي يستخدمونها'],
         's4n' => ['en' => 'Free beta', 'ar' => 'نسخة مجانية'],
         's4l' => ['en' => 'join early and help shape the product', 'ar' => 'انضم مبكرًا وساهم في تطوير المنتج'],
         'p' => [
-            'en' => 'Small businesses lose time rebuilding invoices, translating details, chasing clients and checking whether payment arrived. Invoqly brings that work into one calm, bilingual workspace.',
+            'en' => 'Small businesses lose time rebuilding invoices, organizing client details and checking payments. Invoqly brings that work into one calm workspace.',
             'ar' => 'تهدر الأعمال الصغيرة وقتها في إعادة إعداد الفواتير وترجمة التفاصيل ومتابعة العملاء والتحقق من وصول الدفعات. تجمع إنفوكلي كل ذلك في مساحة عمل هادئة وثنائية اللغة.',
         ],
     ],
     'solution' => [
         'eyebrow' => ['en' => 'The Solution', 'ar' => 'الحل'],
         'title' => ['en' => 'One Simple Workspace From First Draft to Payment.', 'ar' => 'مساحة عمل بسيطة من المسودة الأولى حتى الدفع.'],
-        'b1' => ['en' => 'Create polished English and Arabic invoices', 'ar' => 'إنشاء فواتير احترافية بالعربية والإنجليزية'],
+        'b1' => ['en' => 'Create polished professional invoices', 'ar' => 'إنشاء فواتير احترافية بالعربية والإنجليزية'],
         'b2' => ['en' => 'Use the currency your international client prefers', 'ar' => 'استخدام العملة التي يفضلها عميلك الدولي'],
         'b3' => ['en' => 'Track draft, sent, viewed and paid status', 'ar' => 'متابعة حالة المسودة والإرسال والعرض والدفع'],
         'b4' => ['en' => 'Send friendly reminders when an invoice is overdue', 'ar' => 'إرسال تذكيرات لطيفة عند تأخر الفاتورة'],
@@ -146,7 +146,7 @@ $I18N = [
         't1' => ['en' => 'Add the Details', 'ar' => 'أضف التفاصيل'],
         'd1' => ['en' => 'Enter invoice details or bring them in from the tool you already use.', 'ar' => 'أدخل تفاصيل الفاتورة أو استوردها من الأداة التي تستخدمها بالفعل.'],
         't2' => ['en' => 'Make It Yours', 'ar' => 'اجعلها بهويتك'],
-        'd2' => ['en' => 'Add your logo, choose a currency and create a clear English or Arabic invoice.', 'ar' => 'أضف شعارك واختر العملة وأنشئ فاتورة واضحة بالعربية أو الإنجليزية.'],
+        'd2' => ['en' => 'Add your logo, choose a currency and create a clear professional invoice.', 'ar' => 'أضف شعارك واختر العملة وأنشئ فاتورة واضحة بالعربية أو الإنجليزية.'],
         't3' => ['en' => 'Send and Track', 'ar' => 'أرسل وتابع'],
         'd3' => ['en' => 'Share it with your client and keep its sent, viewed and paid status together.', 'ar' => 'شاركها مع عميلك وتابع حالات الإرسال والعرض والدفع في مكان واحد.'],
     ],
@@ -170,7 +170,7 @@ $I18N = [
         'f2a' => ['en' => 'Up to 250 invoices/month', 'ar' => 'حتى ٢٥٠ فاتورة شهريًا'],
         'f2b' => ['en' => '3 users', 'ar' => '٣ مستخدمين'],
         'f2c' => ['en' => 'Invoice status tracking', 'ar' => 'متابعة حالة الفواتير'],
-        'f2d' => ['en' => 'English and Arabic', 'ar' => 'العربية والإنجليزية'],
+        'f2d' => ['en' => 'International currencies', 'ar' => 'العربية والإنجليزية'],
         'f3a' => ['en' => 'Unlimited invoices', 'ar' => 'فواتير غير محدودة'],
         'f3b' => ['en' => '10 users', 'ar' => '١٠ مستخدمين'],
         'f3c' => ['en' => 'Custom branding', 'ar' => 'هوية بصرية مخصصة'],
@@ -200,9 +200,9 @@ $I18N = [
             'en' => 'Yes. Invoqly is designed for international clients and multiple currencies. Your local tax and invoicing requirements still depend on your country.',
             'ar' => 'نعم. صُممت إنفوكلي للعملاء الدوليين والعملات المتعددة، بينما تعتمد متطلبات الضرائب والفوترة المحلية على بلدك.',
         ],
-        'q4' => ['en' => 'Do you support Arabic?', 'ar' => 'هل تدعمون اللغة العربية؟'],
+        'q4' => ['en' => 'Can I invoice international clients?', 'ar' => 'هل تدعمون اللغة العربية؟'],
         'a4' => [
-            'en' => 'Fully. The interface, invoice dashboards, alerts and support are all available in both Arabic and English — switch anytime with one click, exactly like the toggle on this page.',
+            'en' => 'Yes. Choose from 165 current ISO currencies, save client details worldwide and print or export your invoice as a PDF. The interface and invoice fields are in English. Invoqly records payments; it does not process transfers or convert exchange rates.',
             'ar' => 'بالكامل. الواجهة ولوحات الفواتير والتنبيهات والدعم متاحة بالعربية والإنجليزية معًا — بدّل متى شئت بنقرة واحدة، تمامًا كما في هذه الصفحة.',
         ],
         'q5' => ['en' => 'Does Invoqly file taxes for me?', 'ar' => 'هل تقدم إنفوكلي الإقرارات الضريبية نيابةً عني؟'],
@@ -231,7 +231,7 @@ $I18N = [
         'sub' => ['en' => 'No card. No payment. Just early access and a chance to shape the product.', 'ar' => 'بدون بطاقة أو دفع. وصول مبكر وفرصة للمساهمة في تطوير المنتج.'],
     ],
     'footer' => [
-        'tag' => ['en' => 'Bilingual invoicing for global businesses', 'ar' => 'فواتير ثنائية اللغة للأعمال العالمية'],
+        'tag' => ['en' => 'Professional invoicing for global businesses', 'ar' => 'فواتير ثنائية اللغة للأعمال العالمية'],
         'contact' => ['en' => 'Contact', 'ar' => 'تواصل'],
         'eyebrow' => ['en' => 'Your next invoice can be ready', 'ar' => 'فاتورتك القادمة يمكن أن تكون جاهزة'],
         'title' => ['en' => 'Ready to make invoicing feel simple?', 'ar' => 'هل أنت جاهز لجعل الفوترة أكثر بساطة؟'],
@@ -239,7 +239,7 @@ $I18N = [
         'back' => ['en' => 'Back to top', 'ar' => 'العودة إلى الأعلى'],
         'marquee1' => ['en' => 'Multi-currency ready', 'ar' => 'جاهز لعملات متعددة'],
         'marquee2' => ['en' => 'Built for global small businesses', 'ar' => 'مصمم للأعمال الصغيرة العالمية'],
-        'marquee3' => ['en' => 'Arabic + English', 'ar' => 'العربية + الإنجليزية'],
+        'marquee3' => ['en' => 'Global currencies', 'ar' => 'العربية + الإنجليزية'],
         'marquee4' => ['en' => 'Free during beta', 'ar' => 'مجاني خلال النسخة التجريبية'],
         'rights' => ['en' => '© 2026 Invoqly. All rights reserved.', 'ar' => '© ٢٠٢٦ إنفوكلي. جميع الحقوق محفوظة.'],
     ],
@@ -987,10 +987,6 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
     </nav>
     <div class="nav-right">
       <a class="nav-link auth-link" href="login.php?lang=<?= $LANG ?>" data-i18n="nav.login"><?= tx('nav.login') ?></a>
-      <div class="lang-switch" role="group" aria-label="Language">
-        <button class="lang-btn" type="button" data-lang="en">EN</button>
-        <button class="lang-btn" type="button" data-lang="ar" aria-label="العربية">عربي</button>
-      </div>
       <a class="btn btn-primary" href="signup.php?lang=<?= $LANG ?>" data-i18n="nav.cta"><?= tx('nav.cta') ?></a>
       <button class="nav-burger" type="button" id="drawerOpen" aria-expanded="false" aria-controls="drawer" data-i18n-aria="modal.menu_aria" aria-label="<?= tx('modal.menu_aria') ?>">
         <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 6h16M4 12h16M4 18h16"/></svg>
@@ -1012,10 +1008,6 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
   <a class="d-link" href="#pricing" data-i18n="nav.pricing"><?= tx('nav.pricing') ?></a>
   <a class="d-link" href="#faq" data-i18n="nav.faq"><?= tx('nav.faq') ?></a>
   <a class="d-link" href="login.php?lang=<?= $LANG ?>" data-i18n="nav.login"><?= tx('nav.login') ?></a>
-  <div class="lang-switch" role="group" aria-label="Language" style="margin-top:14px">
-    <button class="lang-btn" type="button" data-lang="en">EN</button>
-    <button class="lang-btn" type="button" data-lang="ar" aria-label="العربية">عربي</button>
-  </div>
   <a class="btn btn-primary" href="signup.php?lang=<?= $LANG ?>" data-i18n="nav.cta"><?= tx('nav.cta') ?></a>
 </aside>
 
@@ -1138,7 +1130,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
 <div class="ticker" aria-hidden="true">
   <div class="ticker-track">
     <?php for ($r = 0; $r < 2; $r++): ?>
-    <span>Multi-Currency</span><span>English + Arabic</span><span>Excel · QuickBooks · Any System</span><span>Free Beta Access</span><span>Professional Invoices</span><span>Built for Global Business</span>
+    <span>Multi-Currency</span><span>Global currencies</span><span>Excel · QuickBooks · Any System</span><span>Free Beta Access</span><span>Professional Invoices</span><span>Built for Global Business</span>
     <?php endfor; ?>
   </div>
 </div>
@@ -1543,6 +1535,7 @@ html[dir="rtl"] .display{letter-spacing:-.015em}
   }
 
   function applyLang(l) {
+    l = 'en';
     lang = l;
     document.documentElement.lang = l;
     document.documentElement.dir = l === 'ar' ? 'rtl' : 'ltr';

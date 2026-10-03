@@ -49,7 +49,6 @@
         <a href="index.html#how">How it works</a><a href="index.html#pricing">Pricing</a><a href="index.html#faq">FAQ</a>
       </nav>
       <div class="nav-end">
-        <a class="lang" href="signup-ar.html" lang="ar">عربي</a>
         <span class="nav-question">Already a member?</span>
         <a class="outline" href="login.html">Sign in</a>
       </div>
@@ -61,10 +60,10 @@
       <div>
         <div class="edition">Free trial · No setup fee</div>
         <h2 class="welcome" id="editorial-title">Start with <em>clarity.</em></h2>
-        <p class="editorial-sub">One place to create bilingual invoices, bill international clients and follow every payment.</p>
+        <p class="editorial-sub">One place to create professional invoices, bill international clients and follow every payment.</p>
       </div>
       <figure class="quote">
-        <blockquote><span class="quote-mark" aria-hidden="true">“</span>Invoicing should feel like a clear conversation with your client, in the language and currency they understand.</blockquote>
+        <blockquote><span class="quote-mark" aria-hidden="true">“</span>Invoicing should feel like a clear conversation with your client, with clear details and the currency they use.</blockquote>
         <figcaption class="person"><span class="person-avatar">I</span><span>The Invoqly product principle</span></figcaption>
       </figure>
     </section>
@@ -98,6 +97,7 @@
       if(config.supabaseUrl&&config.supabasePublishableKey&&window.supabase){client=window.supabase.createClient(config.supabaseUrl,config.supabasePublishableKey)}
       function message(en,ar,isError){status.textContent='en'==='ar'?ar:en;status.style.color=isError?'#A1372A':'var(--green)'}
       function ready(){if(client)return true;message('Authentication setup is almost ready. Add the Supabase project URL and publishable key first.','إعداد تسجيل الدخول شبه جاهز. أضف رابط مشروع Supabase والمفتاح العام أولاً.',true);return false}
+      var forgot=document.getElementById('forgotPassword');if(forgot)forgot.addEventListener('click',async function(e){e.preventDefault();if(!ready())return;if(!form.email.checkValidity()||!form.email.value){message('Enter your email address first.','أدخل بريدك الإلكتروني أولاً.',true);form.email.focus();return}try{var r=await client.auth.resetPasswordForEmail(form.email.value.trim(),{redirectTo:location.origin+'/'+dashboardPath});if(r.error)throw r.error;message('Check your email for a password reset link.','تحقق من بريدك لرابط استعادة كلمة المرور.')}catch(err){message(err.message,err.message,true)}});
       toggle.addEventListener('click',function(){var showing=pass.type==='text';pass.type=showing?'password':'text';toggle.setAttribute('aria-label',showing?'Show password':'Hide password');pass.focus()});
       form.addEventListener('submit',async function(e){e.preventDefault();if(!form.checkValidity()){form.reportValidity();return}if(!ready())return;var submit=form.querySelector('.submit');submit.disabled=true;message('Please wait…','يرجى الانتظار…');var email=form.email.value.trim(),password=form.password.value,result;if(isSignup){result=await client.auth.signUp({email:email,password:password,options:{data:{full_name:form.name.value.trim()},emailRedirectTo:location.origin+'/'+loginPath}})}else{result=await client.auth.signInWithPassword({email:email,password:password})}submit.disabled=false;if(result.error){message(result.error.message,result.error.message,true);return}if(isSignup&&!result.data.session){message('Check your email to confirm your account.','تحقق من بريدك الإلكتروني لتأكيد حسابك.');return}location.href=dashboardPath});
       google.addEventListener('click',async function(){if(!ready())return;google.disabled=true;message('Opening Google…','جارٍ فتح Google…');var result=await client.auth.signInWithOAuth({provider:'google',options:{redirectTo:location.origin+'/'+dashboardPath}});if(result.error){google.disabled=false;message(result.error.message,result.error.message,true)}});
