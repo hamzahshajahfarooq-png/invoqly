@@ -17,7 +17,7 @@
     "build:win": "electron-builder --win nsis --x64 --publish never",
     "build:dir": "electron-builder --win dir --x64 --publish never",
     "audit:package": "node scripts/audit-package.cjs",
-    "build:mac": "electron-builder --mac --universal --publish never",
+    "build:mac": "electron-builder --mac --x64 --arm64 --publish never",
     "build:linux": "electron-builder --linux --publish never"
   },
   "dependencies": {
@@ -89,13 +89,15 @@
         {
           "target": "dmg",
           "arch": [
-            "universal"
+            "x64",
+            "arm64"
           ]
         },
         {
           "target": "zip",
           "arch": [
-            "universal"
+            "x64",
+            "arm64"
           ]
         }
       ],

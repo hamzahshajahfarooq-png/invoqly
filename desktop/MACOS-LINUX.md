@@ -10,7 +10,7 @@ On this Windows host, a Linux x64 unpacked application was successfully built at
 
 1. Commit and push the reviewed desktop source, lockfile, icons, build scripts, workflow and repository test fixtures. The workflow is `.github/workflows/desktop-macos-linux.yml`; it has been configured locally, not executed on GitHub during this task.
 2. Open Actions → **Build Invoqly for macOS and Linux** → **Run workflow**. Leave `sign_macos` disabled for an unsigned review build, or configure the signing secrets below and enable it for distribution.
-3. Download `Invoqly-macOS-universal` and `Invoqly-Linux` from the successful run. The Mac artifact contains a universal Intel/Apple Silicon DMG and ZIP. Linux artifacts contain AppImage and DEB packages for x64 and ARM64, plus checksums and update metadata.
+3. Download `Invoqly-macOS` and `Invoqly-Linux` from the successful run. The Mac artifact contains separate Intel (x64) and Apple Silicon (ARM64) DMG and ZIP packages. Linux artifacts contain AppImage and DEB packages for x64 and ARM64, plus checksums and update metadata.
 4. Test installation, Google/browser/email sign-in, MFA, encrypted restart, printing, PDF/CSV downloads, external billing links, reconnect, notifications and updates on actual supported operating systems. The workflow's layout tests use fictional data; they do not replace these native integration checks.
 5. Publish tested installers and their generated metadata together under `/downloads/macos/` and `/downloads/linux/`. Preserve versioned files. Publish update metadata last. Do not publish an unsigned Mac update or metadata referencing unavailable files. Add website download links only after the packages are downloadable and verified.
 
@@ -49,3 +49,4 @@ Enable `sign_macos` to sign with hardened runtime and request notarization. Neve
 Linux direct AppImage/DEB distribution has no Apple-style signing enrollment charge. Package/repository signing may be added separately; HTTPS and checksums do not substitute for publisher signatures. Windows signing is described separately in `SIGNING.md`.
 
 macOS updates require signed packages and the generated ZIP as well as the DMG. Each platform uses a separate feed. See [electron-builder platform builds](https://www.electron.build/v26/docs/features/multi-platform-build/) and [updates](https://www.electron.build/v26/docs/features/auto-update/).
+
