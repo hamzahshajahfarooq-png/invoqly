@@ -1,0 +1,6 @@
+.feedback-trigger{padding:8px 12px;font-size:12px;white-space:nowrap}
+.feedback-dialog{width:min(520px,calc(100% - 32px));max-height:calc(100dvh - 48px);overflow:auto;box-sizing:border-box;padding:28px;border:1px solid var(--border,#cbd6c2);border-radius:20px;background:var(--surface,#f7f8f0);color:var(--ink,#17241b);box-shadow:0 24px 85px #0004}
+.feedback-dialog::backdrop{background:#10221988;backdrop-filter:blur(5px)}
+.feedback-dialog form{display:grid;gap:16px}.feedback-dialog .field{display:grid;gap:8px}.feedback-dialog select,.feedback-dialog textarea{box-sizing:border-box;width:100%;padding:12px;border:1px solid var(--border,#cbd6c2);border-radius:10px;background:var(--bg,#fff);color:inherit;font:inherit}.feedback-dialog textarea{resize:vertical;min-height:140px}
+.feedback-heading{display:flex;align-items:center;justify-content:space-between;gap:16px}.feedback-heading h2{margin:0;font-size:25px}.feedback-heading button{font:28px system-ui;background:none;border:0;color:inherit;cursor:pointer;padding:0 6px}.feedback-dialog p{margin:0;font-size:12px;line-height:1.6}.feedback-status{color:var(--ink,#17241b);overflow-wrap:anywhere}.feedback-dialog :focus-visible{outline:2px solid #4e7a39;outline-offset:3px}
+@media(max-width:560px){.feedback-dialog{padding:20px}.feedback-trigger{padding:7px 9px}}

@@ -1,0 +1,124 @@
+name: Build Invoqly for macOS and Linux
+on:
+  workflow_dispatch:
+    inputs:
+      sign_macos:
+        description: 'Sign and notarize macOS (requires Apple signing secrets)'
+        type: boolean
+        default: false
+  push:
+    branches: ['codex/desktop-macos-linux-1-5']
+    tags: ['desktop-v*']
+permissions:
+  contents: read
+jobs:
+  macos:
+    runs-on: macos-latest
+    defaults:
+      run:
+        working-directory: desktop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - run: npm ci
+      - run: node node_modules/electron/install.js
+      - run: npm test
+      - name: Test layout with fictional data
+        run: npm run test:desktop
+        env:
+          INVOQLY_LAYOUT_ONLY: '1'
+      - name: Test invoice PDF and billing handoffs with fictional data
+        run: npm run test:desktop
+        env:
+          INVOQLY_BILLING_ONLY: '1'
+      - name: Build unsigned universal review packages
+        if: ${{ !inputs.sign_macos }}
+        run: npm run build:mac
+        env:
+          CSC_IDENTITY_AUTO_DISCOVERY: 'false'
+      - name: Build signed and notarized universal packages
+        if: ${{ inputs.sign_macos }}
+        run: |
+          test -n "$CSC_LINK" && test -n "$CSC_KEY_PASSWORD" && test -n "$APPLE_ID" && test -n "$APPLE_APP_SPECIFIC_PASSWORD" && test -n "$APPLE_TEAM_ID" || { echo 'Apple signing secrets are missing'; exit 1; }
+          npm run build:mac -- --config.mac.notarize=true
+        env:
+          CSC_LINK: ${{ secrets.MAC_CSC_LINK }}
+          CSC_KEY_PASSWORD: ${{ secrets.MAC_CSC_KEY_PASSWORD }}
+          APPLE_ID: ${{ secrets.APPLE_ID }}
+          APPLE_APP_SPECIFIC_PASSWORD: ${{ secrets.APPLE_APP_SPECIFIC_PASSWORD }}
+          APPLE_TEAM_ID: ${{ secrets.APPLE_TEAM_ID }}
+      - run: npm run audit:package
+      - name: Write checksums
+        run: shasum -a 256 dist/*.dmg dist/*.zip > dist/SHA256SUMS-macos.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Invoqly-macOS-universal
+          path: |
+            desktop/dist/*.dmg
+            desktop/dist/*.zip
+            desktop/dist/*.blockmap
+            desktop/dist/latest-mac.yml
+            desktop/dist/SHA256SUMS-macos.txt
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload native test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Invoqly-macOS-test-evidence
+          path: desktop/test-output/*.png
+          if-no-files-found: ignore
+  linux:
+    runs-on: ubuntu-24.04
+    defaults:
+      run:
+        working-directory: desktop
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '24'
+          cache: npm
+          cache-dependency-path: desktop/package-lock.json
+      - name: Install build and test dependencies
+        run: sudo apt-get update && sudo apt-get install -y --no-install-recommends libarchive-tools libopenjp2-tools libfuse2t64 libnss3 libatk-bridge2.0-0t64 libasound2t64 libgbm1 libsecret-1-0 xvfb
+      - run: npm ci
+      - run: node node_modules/electron/install.js
+      - run: npm test
+      - name: Test layout with fictional data
+        run: xvfb-run -a npm run test:desktop
+        env:
+          INVOQLY_LAYOUT_ONLY: '1'
+      - name: Test invoice PDF and billing handoffs with fictional data
+        run: xvfb-run -a npm run test:desktop
+        env:
+          INVOQLY_BILLING_ONLY: '1'
+      - name: Build x64 and ARM64 packages
+        run: npm run build:linux
+      - run: npm run audit:package
+      - name: Audit ARM64 package
+        run: npm run audit:package -- dist/linux-arm64-unpacked/resources/app.asar
+      - name: Write checksums
+        run: sha256sum dist/*.AppImage dist/*.deb > dist/SHA256SUMS-linux.txt
+      - uses: actions/upload-artifact@v4
+        with:
+          name: Invoqly-Linux
+          path: |
+            desktop/dist/*.AppImage
+            desktop/dist/*.deb
+            desktop/dist/*.blockmap
+            desktop/dist/latest-linux*.yml
+            desktop/dist/SHA256SUMS-linux.txt
+          if-no-files-found: error
+          retention-days: 30
+      - name: Upload native test evidence
+        if: always()
+        uses: actions/upload-artifact@v4
+        with:
+          name: Invoqly-Linux-test-evidence
+          path: desktop/test-output/*.png
+          if-no-files-found: ignore

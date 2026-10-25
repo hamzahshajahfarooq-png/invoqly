@@ -1,0 +1,5 @@
+#invoiceEmailSettings .invoice-email-choice{display:flex;align-items:flex-start;gap:10px;font-weight:500;cursor:pointer}
+#invoiceEmailSettings input[type=checkbox]{width:18px;height:18px;min-width:18px;min-height:18px;flex:0 0 18px;padding:0;margin:2px 0 0;accent-color:#31513b}
+#invoiceEmailSettings .field{max-width:460px}
+
+#invoiceEmailSettings{margin:20px 0}#invoiceEmailSettings .invoice-email-group{padding:18px 0;border-top:1px solid var(--line,#dce1d5)}#invoiceEmailSettings .field{display:flex;flex-direction:column;gap:7px;margin-top:14px}#invoiceEmailSettings .invoice-email-choice{margin-top:18px}#invoiceEmailSettings [hidden]{display:none!important}#invoiceEmailSettings h3{margin:0 0 8px}#invoiceEmailSettings button{margin:6px 0}#invoiceReminderSummary{font-size:13px;max-width:460px}

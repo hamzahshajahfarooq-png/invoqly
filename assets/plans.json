@@ -1,0 +1,67 @@
+{
+  "currency": "USD",
+  "annualSavingsPercent": 20,
+  "plans": [
+    {
+      "id": "free",
+      "name": "Free",
+      "description": "For your first independent projects.",
+      "monthlyCents": 0,
+      "annualCents": 0,
+      "invoiceLimit": 5,
+      "clientLimit": 3,
+      "annualInvoiceLimit": null
+    },
+    {
+      "id": "solo",
+      "name": "Solo",
+      "description": "For a steady flow of freelance work.",
+      "monthlyCents": 999,
+      "annualCents": 9599,
+      "invoiceLimit": 50,
+      "clientLimit": 25,
+      "annualInvoiceLimit": 600
+    },
+    {
+      "id": "pro",
+      "name": "Pro",
+      "description": "For an established independent business.",
+      "monthlyCents": 1999,
+      "annualCents": 19199,
+      "invoiceLimit": 250,
+      "clientLimit": 100,
+      "annualInvoiceLimit": 3000
+    },
+    {
+      "id": "unlimited",
+      "name": "Scale",
+      "description": "For a growing business without invoice or client caps.",
+      "monthlyCents": 3999,
+      "annualCents": 38399,
+      "invoiceLimit": null,
+      "clientLimit": null,
+      "annualInvoiceLimit": null
+    },
+    {
+      "id": "enterprise",
+      "name": "Enterprise",
+      "description": "For higher volumes and a tailored agreement.",
+      "monthlyCents": null,
+      "annualCents": null,
+      "invoiceLimit": null,
+      "clientLimit": null,
+      "annualInvoiceLimit": null
+    }
+  ],
+  "features": [
+    "All 165 billing currencies",
+    "Client links and link-view activity",
+    "Your business logo",
+    "Manual payment tracking",
+    "Browser PDF and CSV export",
+    "Reports and invoice history"
+  ],
+  "usageNote": "Solo and Pro monthly plans include a monthly invoice allowance. Their yearly plans include one annual invoice allowance for the subscription year. Unlimited has no invoice or saved-client cap, with all current features included. Drafts and duplicates count toward capped allowances; edits and issuance do not. Saved clients are a total capacity limit.",
+  "billingNote": "Subscription prices are in USD; applicable taxes are shown at checkout. Yearly plans are billed once per year. Paid access starts after payment is confirmed. Your invoice currencies are independent of subscription billing.",
+  "annualSavingsLabel": "about 20%"
+}
