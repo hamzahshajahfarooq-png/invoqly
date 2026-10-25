@@ -1,6 +1,6 @@
 # Invoqly for Windows, macOS and Linux
 
-The published Windows installer remains **1.4.1**. Source version **1.5.0** adds macOS/Linux packaging and platform-specific secure session storage; it is unreleased. See [macOS/Linux build instructions](MACOS-LINUX.md) for current build evidence, native testing requirements and signing setup.
+The published Windows installer remains **1.4.1**. Version **1.5.0** adds macOS/Linux packaging and platform-specific secure session storage. Native Mac/Linux builds and automated flow tests passed; Mac packages are unsigned review builds. See [macOS/Linux build instructions](MACOS-LINUX.md) for build evidence, remaining native checks and signing setup.
 
 **Current release: 1.4.1.** The centered sign-in card now sits over an animated emerald-and-olive WebGL shader. Rendering uses one fullscreen quad capped at 960×600 and at most 30 frames per second, pauses when hidden, respects reduced motion, and falls back to the existing static gradient when WebGL is unavailable. The decorative canvas cannot intercept clicks. Google, browser and email-code choices, the copyable sign-in link, and the signed-in Refresh/Updates controls remain available. See [the 1.4 release record](../DESKTOP-SIGNIN-RELEASE.md) for the underlying secure sign-in workflow.
 

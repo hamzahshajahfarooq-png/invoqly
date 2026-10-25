@@ -2,13 +2,17 @@
 
 ## Current status
 
-Source version 1.5.0 supports Windows, macOS and Linux. The public Windows download and update feed remain at 1.4.1. No macOS or Linux download has been advertised or published.
+Version 1.5.0 has now been built successfully on native GitHub macOS and Linux runners. The public Windows download and update feed remain at 1.4.1. The Mac packages are unsigned review builds, not Developer ID signed or notarized.
 
-On this Windows host, a Linux x64 unpacked application was successfully built at `dist-linux-review-final/linux-unpacked/invoqly`. Its app archive passed the package audit (598 entries, no privileged credentials), and the executable's security fuses were checked. Creating an AppImage failed because the Windows host could not create required symlinks. The Linux executable cannot be run natively here. No macOS package was produced here.
+Downloads are published at https://invoqly.top/download/ . Linux update feeds are live; Mac update metadata is withheld until a signed release is available. The DEB installer provides desktop/protocol integration. For an AppImage, Google/browser return links need a desktop integration tool; email-code sign-in works without it. The download page explains this distinction.
+
+Successful native run: https://github.com/hamzahshajahfarooq-png/invoqly/actions/runs/40177894746 . Both operating systems passed 11 unit tests, fictional email-code sign-in/invalid-code rejection, shader/reduced-motion checks, dashboard layout, Refresh/Updates controls, invoice PDF generation and billing-link handoffs. Both architecture packages passed archive audits. These checks do not establish real Google consent, physical printing or installation/update behavior on every OS version.
+
+The original Windows-host AppImage attempt was blocked by symlink permissions. Native Linux runners solved this without changing Windows security settings. The Mac universal merge failed on framework signatures, so separate Intel and Apple Silicon packages are produced. A shader media-event timing issue was repaired; reduced-motion tests inspect actual rendered frame changes rather than unrelated native screen compositing.
 
 ## Generate installers with GitHub Actions
 
-1. Commit and push the reviewed desktop source, lockfile, icons, build scripts, workflow and repository test fixtures. The workflow is `.github/workflows/desktop-macos-linux.yml`; it has been configured locally, not executed on GitHub during this task.
+1. The reviewed desktop source and credential-free test assets were pushed to `codex/desktop-macos-linux-1-5` in an isolated checkout. The workflow is `.github/workflows/desktop-macos-linux.yml`. For future builds, commit and push reviewed changes; the branch push trigger starts a build. When the workflow is on the default branch, it can also be run manually.
 2. Open Actions → **Build Invoqly for macOS and Linux** → **Run workflow**. Leave `sign_macos` disabled for an unsigned review build, or configure the signing secrets below and enable it for distribution.
 3. Download `Invoqly-macOS` and `Invoqly-Linux` from the successful run. The Mac artifact contains separate Intel (x64) and Apple Silicon (ARM64) DMG and ZIP packages. Linux artifacts contain AppImage and DEB packages for x64 and ARM64, plus checksums and update metadata.
 4. Test installation, Google/browser/email sign-in, MFA, encrypted restart, printing, PDF/CSV downloads, external billing links, reconnect, notifications and updates on actual supported operating systems. The workflow's layout tests use fictional data; they do not replace these native integration checks.

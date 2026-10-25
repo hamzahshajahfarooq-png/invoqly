@@ -10,3 +10,12 @@ Updated 25 October 2026. Scope: direct downloads for macOS/Linux, existing Windo
 
 Customer tables, authentication providers, existing user data and current live download stay unchanged throughout build preparation.
 
+## Status after this run
+
+- Native Mac/Linux builds, automated flow tests, package scans and all eight installer checksums passed.
+- Direct downloads and Linux update metadata are published at https://invoqly.top/download/ . Windows remains 1.4.1; Mac/Linux are 1.5.0.
+- Next: verify actual installer dialogs, real OAuth return flows, physical printers and a future update installation on target hardware. Add automatic AppImage desktop integration; until then recommend DEB for integrated Google/browser return links, or email-code sign-in for standalone AppImage use.
+- Mac Developer ID signing/notarization and signed Mac update distribution await the owner's credentials. No purchase was made. Mac downloads are explicitly unsigned review builds.
+
+See DESKTOP-CROSS-PLATFORM-RELEASE.md for evidence and limitations.
+
