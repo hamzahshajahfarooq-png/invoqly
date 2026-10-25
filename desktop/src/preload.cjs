@@ -26,7 +26,7 @@ function signinShader(){
  if(!gl.getShaderParameter(vertex,gl.COMPILE_STATUS)||!gl.getShaderParameter(fragment,gl.COMPILE_STATUS)||!gl.getProgramParameter(program,gl.LINK_STATUS)){gl.deleteShader(vertex);gl.deleteShader(fragment);gl.deleteProgram(program);gl.deleteBuffer(buffer);return;}
  gl.useProgram(program);gl.bindBuffer(gl.ARRAY_BUFFER,buffer);gl.bufferData(gl.ARRAY_BUFFER,new Float32Array([-1,-1,1,-1,-1,1,-1,1,1,-1,1,1]),gl.STATIC_DRAW);const position=gl.getAttribLocation(program,'position');gl.enableVertexAttribArray(position);gl.vertexAttribPointer(position,2,gl.FLOAT,false,0,0);const size=gl.getUniformLocation(program,'resolution'),time=gl.getUniformLocation(program,'time');
  function paint(){if(disposed||gl.isContextLost())return;gl.uniform2f(size,canvas.width,canvas.height);gl.uniform1f(time,elapsed/1000);gl.drawArrays(gl.TRIANGLES,0,6);canvas.dataset.renderer='webgl';}
- function tick(stamp){if(disposed||document.hidden||motion.matches)return;frame=requestAnimationFrame(tick);if(stamp-last<33)return;if(previous)elapsed+=Math.min(stamp-previous,100);previous=stamp;last=stamp;paint();}
+ function tick(stamp){if(disposed)return;if(document.hidden||motion.matches){sync();return;}frame=requestAnimationFrame(tick);if(stamp-last<33)return;if(previous)elapsed+=Math.min(stamp-previous,100);previous=stamp;last=stamp;paint();}
  function sync(){cancelAnimationFrame(frame);previous=0;canvas.dataset.motion=motion.matches?'reduced':'animated';paint();if(!document.hidden&&!motion.matches)frame=requestAnimationFrame(tick);}
  function resize(){const scale=Math.min(1,960/innerWidth,600/innerHeight);canvas.width=Math.max(1,Math.round(innerWidth*scale));canvas.height=Math.max(1,Math.round(innerHeight*scale));gl.viewport(0,0,canvas.width,canvas.height);paint();}
  function dispose(){disposed=true;cancelAnimationFrame(frame);removeEventListener('resize',resize);document.removeEventListener('visibilitychange',sync);motion.removeEventListener('change',sync);gl.deleteBuffer(buffer);gl.deleteProgram(program);gl.deleteShader(vertex);gl.deleteShader(fragment);}
@@ -50,3 +50,4 @@ if(process.isMainFrame){
  window.addEventListener('offline',()=>ipcRenderer.send('invoqly:offline'));
  window.addEventListener('online',()=>ipcRenderer.send('invoqly:online'));
 }
+

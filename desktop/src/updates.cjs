@@ -26,7 +26,7 @@ class UpdateController {
  }
  async offerReady(){this.downloading=false;return this.offer();}
  async check(manual=false){
-  if(!this.enabled)return manual?this.message({type:'info',title:'Invoqly updates',message:'Update checks are available in the installed Windows application.'}):undefined;
+  if(!this.enabled)return manual?this.message({type:'info',title:'Invoqly updates',message:'Update checks are available in the installed desktop application.'}):undefined;
   if(this.busy)return;
   if(this.available&&manual)return this.offer();
   this.busy=true;
@@ -38,3 +38,4 @@ class UpdateController {
  stop(){clearTimeout(this.initial);clearInterval(this.interval);}
 }
 module.exports={UpdateController};
+
